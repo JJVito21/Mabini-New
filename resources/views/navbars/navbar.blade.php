@@ -4,12 +4,12 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #044D0B">
   <div class="container">
       <img src="{{ URL('images/logo2.png') }}" alt="logo" style="width: 4rem" class="pic">
-      <h3 class="title">Mabini Farm School</h3>
+      <h3 class="text-slate-100 text-lg">Mabini Farm School</h3>
       <div id="mySidepanel" class="sidepanel">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="#">Home</a>
           <a href="#">Memo</a>
-          <a href="#">Programs</a>
+          <a href="#">Programs</a>s
           <a href="#">Procurement</a>
           <a href="#">About Us</a>
           <a href="#">Contact Us</a>

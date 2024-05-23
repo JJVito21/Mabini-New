@@ -3,21 +3,11 @@
 @section('content')
 @include('navbars.navbar')
 
-<div class="container">
-    <img src="{{ URL('images/logo2.png') }}" alt="logo" class="logo" style="z-index: 2">
-    {{-- <h1 class="inquire">Inquire Now</h1> --}}
-</div>
-
-<div class="background-container">
-    <img src="{{ URL('images/building.jpg') }}" alt="logo" class="building">
-    <div class="grn-filter"></div>
-</div>
-
 
 <div class="container">
     
     <div class="content">
-        <h1>this is a homepage</h1>
+        <h1 class="text-slate-900">this is a homepage</h1>
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
