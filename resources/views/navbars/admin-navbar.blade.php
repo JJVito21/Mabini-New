@@ -6,18 +6,18 @@
             {{-- styled on scroll --}}
             <div id="schoolName" class=" bg-neutral-100 flex justify-center items-center gap-3 w-screen py-4">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
-                <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School</h3>
+                <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase">Mabini Farm School</h3>
             </div>
              {{-- end of styled on scroll --}}
             <div
                 class=" bg-[#044D0B] flex justify-center items-center 
            w-screen py-2 navlinks text-neutral-100 gap-x-10 text-lg ">
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Home</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Programs</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Procurement</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">About Us</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Contact Us</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">Home</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">Memo</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">Procurement</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">About Us</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="">Contact Us</a>
             </div>
         </div>
     </nav>

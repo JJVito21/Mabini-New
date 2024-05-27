@@ -3,11 +3,12 @@
 @section('content')
 @include('navbars.navbar')
 
-
+<head> 
+    <title>Mabini Farm School</title> 
+</head> 
 <div class="container">
     
     <div class="content">
-        <h1 class="text-slate-900">this is a homepage</h1>
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
@@ -21,9 +22,33 @@
                 @endauth
             </div>
         @endif
-    </div>
-</div>
 
+
+
+    </div>
+
+    </div>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/brigada.jpg" class="d-block w-screen" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/building.jpg" class="d-block w-screen" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/brigada.jpg" class="d-block w-screen" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 @include('footer.footer')
 
 <style>
