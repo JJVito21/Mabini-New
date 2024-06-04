@@ -16,4 +16,8 @@ class MainController extends Controller
     {
         return view('navbars.navbar');
     }
+    public function programs()
+    {
+        return view('pages.programs');
+    }
 }

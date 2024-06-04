@@ -12,9 +12,9 @@
             <div
                 class=" bg-[#044D0B] flex justify-center items-center 
            w-screen py-2 navlinks text-neutral-100 gap-x-10 text-lg ">
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Home</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/">Home</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/programs">Programs</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Procurement</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="#">About Us</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Contact Us</a>

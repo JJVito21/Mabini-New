@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [MainController::class, 'homepage']);
+Route::get('/programs', [MainController::class, 'programs']);
 
 
 Route::get('/dashboard', function () {
