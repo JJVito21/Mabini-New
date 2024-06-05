@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+<<<<<<< HEAD
+=======
+Route::get('/', [MainController::class, 'homepage']);
+Route::get('/programs', [MainController::class, 'programs']);
+
+>>>>>>> c4faf6061f51889bb27503294135296c086b656f
 
 // Admin Routes
 Route::get('/dashboard', function () {
