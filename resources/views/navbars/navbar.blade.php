@@ -1,34 +1,34 @@
 {{-- @section('content')  --}}
 {{-- desktop navbar --}}
-<section class="hidden md:block desktop fixed z-[999]">
+<section class="hidden md:block desktop fixed z-[99] top-0">
     <nav id="desktop" >
         <div class="flex flex-col">
             {{-- styled on scroll --}}
-            <div id="schoolName" class=" bg-neutral-100 flex justify-center items-center gap-3 w-screen py-4">
+            <a href="/" id="schoolName" class=" bg-neutral-100 flex justify-center items-center gap-3 w-screen py-4">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
                 <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School</h3>
-            </div>
+            </a >
              {{-- end of styled on scroll --}}
             <div
                 class=" bg-[#044D0B] flex justify-center items-center 
            w-screen py-2 navlinks text-neutral-100 gap-x-10 text-lg ">
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Home</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Programs</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Procurement</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">About Us</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="#">Contact Us</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/">Home</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="memo">Memo</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="programs">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="procurement">Procurement</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="about">About Us</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="contact">Contact Us</a>
             </div>
         </div>
     </nav>
 </section>
 
 {{-- mobile sidebar --}}
-<section class="block md:hidden z-[999]">
+<section class="block md:hidden z-[99]">
 
 <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
+        <a class="navbar-brand" href="/"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
                 class="w-16">
 
         </a>
@@ -48,12 +48,12 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
 
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">Memo</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">Programs</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">Procurement</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">About Us</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="#">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="memo">Memo</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="programs">Programs</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="procurement">Procurement</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="contact">Contact Us</a></li>
 
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -112,7 +112,7 @@
 
 .slide-down {
     transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 
 /* Initial state for the navigation bar */

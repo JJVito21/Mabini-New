@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [MainController::class, 'homepage']);
 
-
+// Admin Routes
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,4 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+// User Routes
+Route::get('/', [UserController::class, 'homepage']);
+Route::get('memo', [UserController::class, 'memo']);
+Route::get('programs', [UserController::class, 'programs']);
+Route::get('procurement', [UserController::class, 'procurement']);
+Route::get('about', [UserController::class, 'about']);
+Route::get('contact', [UserController::class, 'contact']);
 require __DIR__.'/auth.php';
