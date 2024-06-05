@@ -22,9 +22,9 @@
     <div class=" preloader d-flex justify-content-center align-items-center gap-2">
     <div class="loader "></div>
     </div>
-      {{-- margin and padding on #carouselHomepage interferes with DOM elements
-            div with height gives space for navbar, but does not interfere with DOM elements --}}
-            <div class="h-20 md:h-36"></div>
+    {{-- margin and padding interferes with DOM elements, especially the navbar.
+    div with height gives space for navbar, but does not interfere with DOM elements. --}}
+    <div class="h-[90px] md:h-36"></div>
     @yield('content')
 
 

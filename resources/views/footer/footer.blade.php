@@ -1,4 +1,5 @@
 <!-- component -->
+
 <div class="flex items-end w-full min-h-screen bg-white">
 
   <footer class="w-full text-gray-700 bg-[#044D0B] body-font">

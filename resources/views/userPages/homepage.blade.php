@@ -77,8 +77,8 @@
         </div>
     </section>
     <section>
-        <div class="my-10 text-center ">
-            <h2 class="uppercase font-serif text-lg md:text-2xl font-bold text-[#044D0B] mb-10">
+        <div class="my-10 text-center mt-20">
+            <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B] mb-10">
                 <span class="underlined underline-mask">academic tracks</span>
             </h2>
         <div
@@ -99,7 +99,76 @@
         </div>
     </div>
     </section>
+    <section >
+        <div class="flex items-center justify-center mt-20">
+            <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
+                <span class="underlined underline-mask">awards</span>
+            </h2>
+        </div>
+        <div
+        class=" container gap-10 mt-20 flex flex-col flex-wrap 
+        md:flex-row md:flex-no-wrap justify-center text-center items-center lg:items-start ">
+        <div class="col hide track">
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            
+        </div>
+        <div class="col hide track">
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            
+        </div>
+        <div class="col hide track">
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            <h2 class="uppercase font-serif font-bold text-lg md:text-2xl text-[#044D0B] mb-10">award</h2>
+            
+        </div>
+    </div>
+    </section>
+    <section>
+        <div class="flex items-center justify-center mt-20">
+            <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-neutral-900">
+                why you should choose mabini
+            </h2>
+        </div>
+        <div class="flex flex-wrap flex-col md:flex-row items-center justify-center text-pretty px-20 my-20 gap-10">
+            <div class="col lg:ps-10">
+                <p class="text-pretty ">
+                    "Auf der Heide blüht
+                    ein kleines Blümelein
+                    Und das heißt: Erika.
+                    Heiß von hunderttausend
+                    kleinen Bienelein
+                    Wird umschwärmt Erika.
+                    Denn ihr Herz ist voller Süßigkeit,
+                    Zarter Duft entströmt dem Blütenkleid
+                    Auf der Heide blüht
+                    ein kleines Blümelein
+                    Und das heißt: Erika.
+                    
+                    
+                    In der Heimat wohnt
+                    ein kleines Mägdelein
+                    Und das heißt: Erika.
+                    Dieses Mädel ist mein treues Schätzelein
+                    Und mein Glück, Erika.
+                    Wenn das Heidekraut rot-lila blüht,
+                    Singe ich zum Gruß ihr dieses Lied.
+                    Auf der Heide blüht
+                    ein kleines Blümelein
+                    Und das heißt: Erika."
+                </p>
+                <p class="italic">-Jian Vito, The Principal</p>
 
+        </div>
+            <div class="col">
+                <img src="images/principal.jpg" alt="" class="md:w-[30rem]">
+            </div>
+        </div>
+    </section>
     @include('footer.footer')
 
     <style>
