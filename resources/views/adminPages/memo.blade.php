@@ -24,7 +24,7 @@
         @endif
 
         <div class="flex text-center items-center justify-center ">
-            <p class="mt-80 text-4xl uppercase">admin home page</p>
+            <p class="mt-80 text-4xl uppercase">admin memo page</p>
             </div>
 
     </div>

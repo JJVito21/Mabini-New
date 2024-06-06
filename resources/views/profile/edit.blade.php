@@ -1,4 +1,13 @@
-<x-app-layout>
+@extends('layouts.layout')
+
+@section('content')
+@include('navbars.admin-navbar')
+
+<head> 
+    <title>Mabini Farm School</title> 
+</head> 
+<div class="container">
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -26,4 +35,10 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    @include('footer.footer')
+
+    <style>
+    
+    
+    </style>
+    @endsection

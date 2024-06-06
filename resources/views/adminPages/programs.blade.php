@@ -1,19 +1,40 @@
-
 @extends('layouts.layout')
 
 @section('content')
-@include('navbars.navbar')
+@include('navbars.admin-navbar')
 
-<section>
-    <div class="container">
-        <div class="h-20 md:h-36"></div>
+<head> 
+    <title>Mabini Farm School</title> 
+</head> 
+<div class="container">
+    
+    <div class="content">
+        @if (Route::has('login'))
+            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                @auth
+                    <a href="{{ url('/homepage') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Homepage</a>
+                @else
+                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-        <div style="height: 100vh;">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=UTC&bgcolor=%23ffffff&src=bGFnZ2VyLjAxMjFAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZmFtaWx5MDYxNjYzMjY4MjA2NDg4OTcxNzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%23E4C441&color=%230B8043" style="border:solid 1px #777; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
+
+        <div class="flex text-center items-center justify-center ">
+            <p class="mt-80 text-4xl uppercase">admin programs page</p>
+            </div>
+
     </div>
-</div>
-</section>
- 
+
+    </div>
+    
 @include('footer.footer')
 
+<style>
+
+
+</style>
 @endsection

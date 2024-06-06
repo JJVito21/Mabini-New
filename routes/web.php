@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 
 // Admin Routes
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/homepage', function () {
+    return view('adminPages.homepage');
+})->middleware(['auth', 'verified'])->name('homepage');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,7 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+Route::middleware('auth')->group(function () {
+    Route::get('memo_management', [MainController::class, 'memo_management'])->name('memo_management');
+    Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
+});
 // User Routes
 Route::get('/', [UserController::class, 'homepage']);
 Route::get('memo', [UserController::class, 'memo']);
