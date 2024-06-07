@@ -1,4 +1,5 @@
 <section>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Profile Information') }}
