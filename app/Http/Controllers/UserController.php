@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Memo;
 
 use Illuminate\Http\Request;
 
@@ -13,8 +14,11 @@ class UserController extends Controller
     }
     public function memo()
     {
-        return view('userPages.memo');
+        $data = Memo::all()->reverse();
+        //route is correct and can be visited when clicking thanks to extension
+        return view('UserPages.memo', ['data' => $data]);
     }
+
     public function programs()
     {
         return view('userPages.programs');

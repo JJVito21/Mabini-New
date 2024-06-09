@@ -3,69 +3,56 @@
 @section('content')
 @include('navbars.navbar')
 
-<div class="flex text-center items-center justify-center mt-20">
+<!-- Load jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<div class="container">
-    <table id="memoTable" class="display">
+<!-- Load DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
+
+
+<div class="flex items-center justify-center mt-20">
+
+    <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
+        <span class="underlined underline-mask">memorandums</span>
+    </h2>
+</div>
+
+<div class="mt-20 mb-20  md:mb-auto mx-auto w-[90%] overflow-hidden">
+
+    <table id="memoTable" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>File Name</th>
+                <th>Date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($data as $item)
+            
             <tr>
-                <td>Jian Vito</td>
-                <td>Project Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Bitch Marcenilla</td>
-                <td>Magnanakaw ng tape sa ryonan</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Nigga ChengChong</td>
-                <td>System Error</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-                        <tr>
-                <td>Hail Hitler</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <!-- Add more rows as needed -->
+              <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
+              <td>{{ $item->created_at->format('Y-m-d') }}</td>
+              <td>
+                 <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3">Download</a>
+              </td> 
+           </tr>
+           
+            @endforeach
         </tbody>
+
+
     </table>
- </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+
+<!-- Load DataTables JS -->
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script>
 
 <script>
-    
     $(document).ready(function() {
         $('#memoTable').DataTable({
-            responsive: true
+            rowReorder: true
         });
     });
 </script>

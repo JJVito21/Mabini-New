@@ -5,3 +5,24 @@
 html{
     overflow-x: hidden;
 }
+
+       /* arch underline styling */
+       .underlined {
+        position: relative;
+    }
+
+    .underline-mask:after {
+        content: '';
+        position: absolute;
+        top: 95%;
+        width: 150%;
+        aspect-ratio: 3 / 1;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 50%;
+        border: 6px solid #E9AC32;
+        /* Use a conic gradient mask to hide and show the bits you want, making the arch from an ellipse */
+        --spread: 140deg;
+        --start: 290deg;
+        mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+    }

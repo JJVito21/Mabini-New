@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\MemoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +31,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('memo_management', [MainController::class, 'memo_management'])->name('memo_management');
     Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
+});
+    
+Route::middleware('auth')->group(function () {
+    Route::get('memo_management', [MemoController::class, 'memo'])->name('memo_management');
+    Route::get('/upload', [MemoController::class, 'showForm'])->name('upload.form');
+    Route::post('/upload', [MemoController::class, 'uploadFile'])->name('upload');
+    Route::get('/download/{file}', [MemoController::class, 'download']);
+    Route::get('/delete/{id}', [MemoController::class, 'delete'])->name('delete');
 });
 // User Routes
 Route::get('/', [UserController::class, 'homepage']);
