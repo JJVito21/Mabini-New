@@ -31,11 +31,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('memo_management', [MemoController::class, 'memo'])->name('memo_management');
     Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
 });
     
 Route::middleware('auth')->group(function () {
-    Route::get('memo_management', [MemoController::class, 'memo'])->name('memo_management');
     Route::get('/upload', [MemoController::class, 'showForm'])->name('upload.form');
     Route::post('/upload', [MemoController::class, 'uploadFile'])->name('upload');
     Route::get('/download/{file}', [MemoController::class, 'download']);

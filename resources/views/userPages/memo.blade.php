@@ -17,11 +17,11 @@
     </h2>
 </div>
 
-<div class="mt-20 mb-20  md:mb-auto mx-auto w-[90%] overflow-hidden">
+<div class="mt-20 mb-20  lg:mb-auto mx-auto w-[90%] overflow-hidden">
 
     <table id="memoTable" class="display" style="width:100%">
         <thead>
-            <tr>
+            <tr >
                 <th>File Name</th>
                 <th>Date</th>
                 <th>Action</th>
@@ -30,11 +30,11 @@
         <tbody>
             @foreach ($data as $item)
             
-            <tr>
+            <tr class="">
               <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>
-                 <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3">Download</a>
+                 <a href="{{ url('/download', $item->file) }}" class="btn bg-lime-600 hover:bg-lime-700 text-white  me-3">Download</a>
               </td> 
            </tr>
            

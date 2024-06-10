@@ -16,7 +16,7 @@
     </h2>
 </div>
 
-<div class="mt-20 mb-20  md:mb-auto mx-auto w-[90%] overflow-hidden">
+<div class="mt-20 mb-20  lg:mb-auto mx-auto w-[90%] overflow-hidden">
     <div class="flex justify-end">
         <button type="button" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100" data-bs-toggle="modal" data-bs-target="#uploadModal"><i class="fa-solid fa-plus"></i> Add New
         </button>

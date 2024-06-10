@@ -37,7 +37,7 @@
     </section>
 
     <section>
-        <div class="bg-[#0C7016] koho-font text-slate-200 w-screen py-4 md:py-8 flex items-center justify-center ">
+        <div class="bg-[#0C7016] font-koho text-slate-200 w-screen py-4 md:py-8 flex items-center justify-center ">
 
             <div
                 class="container gap-x-2 md:gap-x-10 flex flex-row flex-no-wrap justify-center text-center md:items-center lg:items-start ">
@@ -217,10 +217,6 @@
 
         .active {
             background-color: #88B15E !important;
-        }
-
-        .koho-font {
-            font-family: "KoHo", sans-serif;
         }
 
  

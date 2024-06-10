@@ -26,3 +26,12 @@ html{
         --start: 290deg;
         mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
     }
+
+    /* google fonts */
+    .font-koho{
+        font-family: "KoHo", sans-serif;
+    }
+
+    .font-kaushan{
+        font-family: "Kaushan Script", cursive;
+    }
