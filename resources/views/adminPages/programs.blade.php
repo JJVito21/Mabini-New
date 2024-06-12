@@ -4,7 +4,8 @@
 @include('navbars.admin-navbar')
 
 
-<div class="container">
+<div class="mb-40 lg:-mb-56 container">
+
     
     <div class="content">
 
@@ -15,12 +16,12 @@
 
     </div>
 
-    </div>
+</div>
     
+    
+    <style>
+        
+        
+    </style>
 @include('footer.footer')
-
-<style>
-
-
-</style>
 @endsection

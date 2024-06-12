@@ -2,13 +2,16 @@
 
 @section('content')
 @include('navbars.navbar')
+
+<div class="mb-40 lg:-mb-56">
+
 <section id="contact-banner" class="h-80 md:h-[30rem] mb-20">
   <div class="flex flex-row justify-center items-center h-full gap-10 md:gap-20">
     <div class="flex flex-col">
       <img src="images/logo2.png" alt="" class="w-24 md:w-40">
     </div>
     <div class="flex flex-row items-center gap-2">
-      <h1 class="font-koho text-neutral-100 text-2xl md:text-[4rem]">Contact Us</h1>
+      <h1 class="font-koho text-neutral-100 text-4xl md:text-[4rem]">Contact Us</h1>
     </div>
   </div>
 </section>
@@ -62,6 +65,7 @@
 </div>
 </section>
 
+</div>
 @include('footer.footer')
 
 <style>

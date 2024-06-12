@@ -3,8 +3,8 @@
 @section('content')
 @include('navbars.admin-navbar')
 
+<div class="mb-40 lg:-mb-56">
 
-<div class="container">
     
     <div class="content">
         @if (Route::has('login'))
@@ -27,12 +27,12 @@
 
     </div>
 
-    </div>
-    
-@include('footer.footer')
+
+</div>
 
 <style>
-
-
+    
+    
 </style>
+@include('footer.footer')
 @endsection

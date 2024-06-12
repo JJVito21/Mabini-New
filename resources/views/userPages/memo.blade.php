@@ -9,6 +9,7 @@
 <!-- Load DataTables CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
 
+<div class="mb-40 lg:-mb-20">
 
 <div class="flex items-center justify-center mt-20">
 
@@ -30,11 +31,16 @@
         <tbody>
             @foreach ($data as $item)
             
-            <tr class="">
-              <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
+            <tr>
+              <td><i class="fa-solid fa-file-pdf text-red-600"></i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>
-                 <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100  me-3">Download</a>
+                <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100  hover:text-neutral-100 ">
+                    <div class="flex flex-col py-1">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <div class="bg-neutral-100 w-4 h-0.5 rounded"></div>
+                    </div>
+                    </a>
               </td> 
            </tr>
            
@@ -45,6 +51,7 @@
     </table>
 </div>
 
+</div>
 <!-- Load DataTables JS -->
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script>

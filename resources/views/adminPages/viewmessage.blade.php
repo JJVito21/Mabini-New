@@ -8,7 +8,8 @@
 <!-- Load DataTables CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
 
-<div class="container">
+<div class="mb-40 lg:-mb-56 container">
+
     
 
 
@@ -43,31 +44,7 @@
             </div>
           </div>
     
-        {{-- <table id="messageTable" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($messageItem as $item)
-                
-                <tr>
-                  <td >{{ $item->name }}</td>
-                  <td>{{ $item->created_at->format('Y-m-d') }}</td>
-                  <td>
-                     <a href="#" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100  me-3">View</a>
-                     <a href="{{ route('delete_message', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')"><i class="fa-solid fa-trash-can"></i></a>
-                  </td> 
-               </tr>
-               
-                @endforeach
-            </tbody>
-    
-    
-        </table> --}}
+      
         </div>
 
 

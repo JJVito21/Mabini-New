@@ -54,5 +54,8 @@ class UserController extends Controller
 
         return redirect()->route('contact')->with('success', 'Message Sent!');
     }
+
+
+
     //footer links to be added
 }

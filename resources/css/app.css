@@ -31,7 +31,9 @@ html{
     .font-koho{
         font-family: "KoHo", sans-serif;
     }
-
+    .font-kaisei{
+        font-family: "Kaisei Opti", serif;
+    }
     .font-kaushan{
         font-family: "Kaushan Script", cursive;
     }

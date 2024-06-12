@@ -6,12 +6,12 @@
             {{-- styled on scroll --}}
             <a href="/" id="schoolName" class=" bg-neutral-100 flex justify-center items-center gap-3 w-screen py-4">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
-                <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School</h3>
+                <h3 class="font-kaisei text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School</h3>
             </a >
              {{-- end of styled on scroll --}}
             <div
                 class=" bg-[#044D0B] flex justify-center items-center 
-           w-screen py-2 navlinks text-neutral-100 gap-x-10 text-lg ">
+           w-screen py-2 navlinks font-kaisei text-neutral-100 gap-x-10 text-lg ">
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="/">Home</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="memo">Memo</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="programs">Programs</a>
@@ -26,7 +26,7 @@
 {{-- mobile sidebar --}}
 <section class="block md:hidden z-[99]">
 
-<nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md">
+<nav class="navbar bg-body-tertiary fixed-top navlinks font-kaisei shadow-md">
     <div class="container-fluid">
         <a class="navbar-brand" href="/"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
                 class="w-16">
@@ -55,22 +55,7 @@
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="about">About Us</a></li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="contact">Contact Us</a></li>
 
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> --}}
                 </ul>
-
             </div>
         </div>
 </nav>
@@ -100,10 +85,7 @@
 </script>
 
 <style>
-    h3,
-    .navlinks {
-        font-family: "Kaisei Opti", serif;
-    }
+
 /* Transition classes for sliding effect */
 .slide-up {
     transform: translateY(-72%);

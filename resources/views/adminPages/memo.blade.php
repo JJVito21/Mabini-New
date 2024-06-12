@@ -8,6 +8,7 @@
 <!-- Load DataTables CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
 
+<div class="mb-40 lg:-mb-20 container">
 
 <div class="flex items-center justify-center mt-20">
 
@@ -36,11 +37,10 @@
               <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td class="flex flex-row">
-                {{-- <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3">Download</a> --}}
-                <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3 ">
+                <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
                 <div class="flex flex-col py-1">
                     <i class="fa-solid fa-arrow-down"></i>
-                    <div class="bg-neutral-100 w-4 h-0.5"></div>
+                    <div class="bg-neutral-100 w-4 h-0.5 rounded"></div>
                 </div>
                 </a>
                 <a href="{{ route('delete_memo', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')"><i class="fa-solid fa-trash-can"></i></a>
@@ -78,7 +78,7 @@
         </div>
       </div>
 
-
+</div>
 @if(session('success'))
       <style>
           /* Add CSS styles for the success message */
@@ -122,9 +122,4 @@
 </script>
     
 @include('footer.footer')
-
-<style>
-
-
-</style>
 @endsection

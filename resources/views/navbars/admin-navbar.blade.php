@@ -6,13 +6,13 @@
             {{-- styled on scroll --}}
             <a href="homepage" id="schoolName" class=" bg-neutral-100 flex justify-center items-center  w-screen py-4 gap-2">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
-                <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School
+                <h3 class="text-neutral-800 font-bold font-kaisei text-lg md:text-xl uppercase tracking-wider">Mabini Farm School
                 </h3>
             </a>
             {{-- end of styled on scroll --}}
             <div
                 class=" bg-[#044D0B] 
-           w-screen py-2 navlinks text-neutral-100 text-lg relative flex justify-center items-center ">
+           w-screen py-2 navlinks font-kaisei text-neutral-100 text-lg relative flex justify-center items-center ">
            <div class="col ms-10">    
                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage">Home</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/memo_management">Memo</a>
@@ -28,6 +28,7 @@
                 <li>
                     <div class="mx-3 text-lime-700">{{ Auth::user()->email }}</div>
                 </li>
+                
                 <li>
                 <a class="dropdown-item font-medium" href="{{ route('profile.edit') }}">
                         {{ __('Profile') }}
@@ -60,7 +61,7 @@
 {{-- mobile sidebar --}}
 <section class="block md:hidden z-[99]">
 
-    <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md">
+    <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md ">
         <div class="container-fluid">
             <a href="homepage" class="flex"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
                     class="w-16 ">
@@ -79,27 +80,31 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
 
-                        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
+                        <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
                                 href="homepage">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
+                        <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
                                 href="memo_management">Memo</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
+                        <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
                                 href="programs_management">Programs</a>
                         </li>
                         <li class="nav-iten">
-                        <a href="message_management" class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm">Messages</a>
+                        <a href="message_management" class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm">Messages</a>
                         </li>
                         <div class="dropdown mt-3">
-                            <button class="btn dropdown-toggle ms-[-12px]" type="button" data-bs-toggle="dropdown">
+                            <button class="btn dropdown-toggle ms-[-12px] font-kaisei" type="button" data-bs-toggle="dropdown">
                                 {{ Auth::user()->name }}
 
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{ route('profile.edit') }}"">{{ __('Profile') }}</a></li>
+                                <li>
+                                    <div class="mx-3 text-lime-700">{{ Auth::user()->email }}</div>
+                                </li>
                               <li>
-                                <hr class="dropdown-divider mt-5">
+                                <a class="dropdown-item font-medium"  href="{{ route('profile.edit') }}"">{{ __('Profile') }}</a></li>
+                              <li>
+                                <hr class="dropdown-divider mt-4">
                               </li>
                               <li>
                                 <form method="POST" action="{{ route('logout') }}">
@@ -145,11 +150,6 @@
 </script>
 
 <style>
-    h3,
-    .navlinks {
-        font-family: "Kaisei Opti", serif;
-    }
-
     /* Transition classes for sliding effect */
     .slide-up {
         transform: translateY(-72%);

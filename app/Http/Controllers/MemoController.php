@@ -42,7 +42,6 @@ class MemoController extends Controller
     public function Memo()
     {
         $data = Memo::all()->reverse();
-        //route is correct and can be visited when clicking thanks to extension
         return view('adminPages.memo', ['data' => $data]);
     }
     
@@ -51,7 +50,6 @@ class MemoController extends Controller
     {
     return response()->download(storage_path('app/memo/'.$file));
     }
-
 
     public function delete($id)
     {

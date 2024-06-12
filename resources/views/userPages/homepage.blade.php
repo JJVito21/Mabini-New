@@ -4,9 +4,9 @@
     @include('navbars.navbar')
 
 
+   <div class="mb-40 lg:-mb-56">
     <section>
       
-
         <div id="carouselHomepage" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="0"
@@ -87,7 +87,7 @@
             </div>
 
               <div class="flex flex-col justify-center items-center h-screen">
-            <iframe class="mt-1 md:pt-12 w-[20rem] h-[12rem] md:w-[30rem]  md:h-[25rem]" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmabininhscadiz%2Fvideos%2F457016009709204%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            <iframe class="mt-1 md:pt-14 w-[20rem] h-[12rem] md:w-[30rem]  md:h-[25rem]" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmabininhscadiz%2Fvideos%2F457016009709204%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
              </div>
 
             </div>
@@ -186,6 +186,7 @@
             </div>
         </div>
     </section>
+   </div>
     @include('footer.footer')
 
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MessageController;
@@ -57,4 +58,6 @@ Route::get('about', [UserController::class, 'about']);
 Route::get('contact', [UserController::class, 'contact']) ->name ('contact');
 Route::post('send', [UserController::class, 'send']) ->name ('send');
 
+//fallback route
+Route::fallback(FallbackController::class);
 require __DIR__.'/auth.php';
