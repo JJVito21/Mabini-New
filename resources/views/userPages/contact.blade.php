@@ -7,14 +7,17 @@
     <div class="flex flex-col">
       <img src="images/logo2.png" alt="" class="w-24 md:w-40">
     </div>
-    <div class="flex flex-row items-center gap-2 md:gap-10">
+    <div class="flex flex-row items-center gap-2">
       <h1 class="font-koho text-neutral-100 text-2xl md:text-[4rem]">Contact Us</h1>
-      <div class="bg-neutral-100 w-0.5 h-12  md:w-1 md:h-24"></div>
     </div>
   </div>
 </section>
 <section class="mb-40 lg:mb-auto">
-<p class="mt-10 text-lg md:text-2xl uppercase text-center font-sans font-medium">Let's Start a Conversation</p>
+  {{-- typing class parameters are in app.css --}}
+<div class="flex items-center justify-center">
+<p class="typing mt-10 text-lg md:text-2xl uppercase text-center font-sans font-medium">Let's Start a Conversation</p>
+
+</div>
 
 <div class="flex flex-col md:flex-row justify-center items-center h-full gap-20 md:gap-40 mt-20">
   
@@ -64,7 +67,7 @@
 <style>
   #contact-banner {
       background:
-      linear-gradient(rgba(23, 77, 4, 0.7), rgba(136, 177, 94, 0.7)),
+      linear-gradient(rgba(23, 77, 4, 0.7), rgba(136, 177, 94,0.9)),
       url("images/building.jpg") no-repeat center / cover;
   }
 

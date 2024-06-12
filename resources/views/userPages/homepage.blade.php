@@ -48,7 +48,7 @@
                         <span small-data-val="55" class="smallNum">00</div>
                     <div class="col text-xs md:text-sm">Years of Existence </div>
                 </div>
-                <span class="bg-neutral-300 w-[1px] h-22 md:h-28 "></span>
+                <span class="bg-neutral-300 w-0.5 h-22 md:h-28 "></span>
                 <div class="flex flex-col items-center w-44">
                     <div class="col">
                         <i class="fa-solid fa-book-open text-2xl md:text-[3rem]"></i></div>
@@ -56,7 +56,7 @@
                         <span small-data-val="20" class="smallNum">00</div>
                     <div class="col text-xs md:text-sm">Programs</div>
                 </div>
-                <span class="bg-neutral-300 w-[1px] h-22 md:h-28 "></span>
+                <span class="bg-neutral-300 w-0.5 h-22 md:h-28 "></span>
                 <div class="flex flex-col items-center w-44">
                     <div class="col">
                         <i class="fa-solid fa-graduation-cap text-2xl md:text-[3rem]"></i></div>
@@ -64,7 +64,7 @@
                         <span big-data-val="30000" class="bigNum">20000</div>
                     <div class="col text-xs md:text-sm">Graduates</div>
                 </div>
-                <span class="bg-neutral-300 w-[1px] h-22 md:h-28 "></span>
+                <span class="bg-neutral-300 w-0.5 h-22 md:h-28 "></span>
                 <div class="flex flex-col items-center w-44">
                     <div class="col">
                         <i class="fa-solid fa-user-group text-2xl md:text-[3rem]"></i></div>
@@ -76,6 +76,23 @@
 
         </div>
     </section>
+
+    <section id="contact-banner" class="h-80 md:h-[30rem] mb-20">
+
+          <div class="pt-10 md:mt-auto flex flex-col md:flex-row items-center justify-center  h-full md:gap-x-10">
+            
+            <div class="flex flex-row items-center justify-center gap-2">
+              <h1 class="font-koho text-neutral-100 text-2xl md:text-[4rem]">Introduction</h1>
+              <div class="bg-neutral-100 w-0.5 h-10 md:w-1 md:h-24"></div>
+            </div>
+
+              <div class="flex flex-col justify-center items-center h-screen">
+            <iframe class="mt-1 md:pt-12 w-[20rem] h-[12rem] md:w-[30rem]  md:h-[25rem]" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmabininhscadiz%2Fvideos%2F457016009709204%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+             </div>
+
+            </div>
+      </section>
+
     <section>
         <div class="my-10 text-center mt-20">
             <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B] mb-10">
@@ -135,7 +152,7 @@
             </h2>
         </div>
         <div class="flex flex-wrap flex-col md:flex-row items-center justify-center text-pretty px-20 my-20 gap-10">
-            <div class="col lg:ps-10">
+            <div class="flex-col lg:ps-10 max-w-[35rem]">
                 <p class="text-pretty ">
                     "Auf der Heide blüht
                     ein kleines Blümelein
@@ -163,13 +180,14 @@
                 </p>
                 <p class="italic">-Jian Vito, The Principal</p>
 
-        </div>
-            <div class="col">
+            </div>
+            <div class="flex-col">
                 <img src="images/principal.jpg" alt="" class="md:w-[30rem]">
             </div>
         </div>
     </section>
     @include('footer.footer')
+
 
     <style>
         .inquire {
@@ -240,7 +258,11 @@
         .track:nth-child(4){
             transition-delay: 600ms;
         }
-
+        #contact-banner {
+            background:
+            linear-gradient(rgba(23, 77, 4, 0.7), rgba(136, 177, 94, 0.7)),
+            url("images/air-shot.jpg") no-repeat center / cover;
+        }
     </style>
 
 <script>
@@ -298,5 +320,7 @@
     });
     const hiddenElements = document.querySelectorAll ('.hide');
     hiddenElements.forEach((el) => observer.observe(el));
+
+    
 </script>
 @endsection
