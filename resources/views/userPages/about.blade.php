@@ -4,11 +4,11 @@
     @include('navbars.navbar')
 
 
-    <section id="about-banner" class="h-80 md:h-[30rem] mb-20">
+    <section id="about-banner" class="h-80 md:h-[30rem] mb-20 ">
        <div class="relative w-screen">
         <div class="absolute inset-0 bg-[#044D0B] mt-[20rem] h-6 md:mt-[30rem] md:h-8 "></div>
         <div class="absolute inset-0 bg-[#044D0B] mt-[18.7rem] h-8 w-44 md:mt-[28rem] md:h-10 md:w-72 mx-auto rounded-xl">
-            <p class="text-center text-2xl md:text-4xl font-bold uppercase text-slate-100 mt-1 md:mt-2">about us</p>
+            <h1 class="text-center text-2xl md:text-4xl font-medium uppercase text-slate-100 mt-1 md:mt-2">about us</h1>
         </div>
         
        </div>

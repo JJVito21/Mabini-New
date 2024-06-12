@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Memo;
+use App\Models\ContactMessages;
 
 use Illuminate\Http\Request;
 
@@ -35,6 +36,23 @@ class UserController extends Controller
     {
         return view('userPages.contact');
     }
+    public function send(Request $request){
+        $request->validate([            
+            'name' => 'required',          
+            'email' =>  'required', 
+            'message' =>  'required'
+        ]);
+        
+        $data = [   
+            'name' => $request -> name,          
+            'email' =>  $request -> email, 
+            'message' =>  $request -> message        
 
+        ];
+        
+        $newContactMessages = ContactMessages::create($data);
+
+        return redirect()->route('contact')->with('success', 'Message Sent!');
+    }
     //footer links to be added
 }

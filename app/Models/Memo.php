@@ -9,6 +9,7 @@ class Memo extends Model
 {
     use HasFactory;
     protected $table = 'memos';
+    
     protected $fillable = ['file'];
 }
 

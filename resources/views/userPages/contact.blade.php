@@ -14,29 +14,34 @@
   </div>
 </section>
 <section class="mb-40 lg:mb-auto">
-<p class="mt-10 text-lg md:text-2xl uppercase text-center font-sans font-medium">Lets Start a Conversation</p>
+<p class="mt-10 text-lg md:text-2xl uppercase text-center font-sans font-medium">Let's Start a Conversation</p>
 
 <div class="flex flex-col md:flex-row justify-center items-center h-full gap-20 md:gap-40 mt-20">
   
   {{-- messages are sent to the admin in this form --}}
   <div class="flex flex-col w-80 text-gray-900">
-    <form action="">
+
+    <form method="POST" action="{{ route('send') }}" enctype="multipart/form-data">
+      @csrf
+      @method('post')
+
     <div class="mb-3">
       <label for="name" class="form-label font-sans font-medium capitalize">Name</label>
-      <input type="text" class="form-control border-0 bg-gray-300" id="name" placeholder="John Doe">
+      <input type="text" class="form-control border-0 bg-gray-300 rounded" name="name" id="name" placeholder="John Doe" required onkeydown="return /[a-z ]/i.test(event.key)">
     </div>
     <div class="mb-3">
       <label for="email" class="form-label font-sans font-medium capitalize">Email address</label>
-      <input type="email" class="form-control border-0 bg-gray-300" id="email" placeholder="name@example.com">
+      <input type="email" class="form-control border-0 bg-gray-300 rounded" name="email" id="email" placeholder="name@example.com" required>
     </div>
     <div class="mb-3">
       <label for="message" class="form-label font-sans font-medium capitalize">Message</label>
-      <textarea class="form-control bg-gray-300" id="message" rows="3"></textarea>
+      <textarea class="form-control bg-gray-300" name="message" id="message" rows="3" required placeholder="Try writing something here ..."></textarea>
     </div>
     <div class="flex justify-end">
-      <a href="#" class="btn bg-lime-600 hover:bg-lime-700 text-white">Send</a>
+      <button type="submit" id="sent" class="btn bg-lime-600 hover:bg-lime-700 text-white">Send</button>
     </div>
   </form>
+
   </div>
   <div class="flex flex-col justify-items-center w-80 capitalize text-gray-900 gap-2 ">
     <h4 class="font-bold underline mb-1">direct contact</h4>
@@ -64,4 +69,35 @@
   }
 
 </style>
+
+@if(session('success'))
+    <style>
+        /* Add CSS styles for the success message */
+        #success-message {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+        }
+    </style>
+    
+    <div id="success-message" class="alert bg-[#6e914b] text-neutral-200 position-fixed bottom-0 mt-5 ms-4">
+        {{ session('success') }}
+    </div>
+    
+    <script>
+        // Function to close the success message
+        function closeSuccessMessage() {
+            var successMessage = document.getElementById('success-message');
+            successMessage.style.opacity = '0';
+
+            // Wait for the transition to complete before hiding or removing the message
+            setTimeout(function () {
+                successMessage.style.display = 'none'; // or remove the success message from the DOM
+            }, 500); // Duration of the transition, should match the CSS transition duration
+        }
+
+        // Close the success message after 3000 milliseconds even if the modal is not closed
+        setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
+    </script>
+@endif
+
 @endsection

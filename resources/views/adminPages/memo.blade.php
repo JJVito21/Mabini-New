@@ -35,9 +35,16 @@
             <tr>
               <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
-              <td>
-                 <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3">Download</a>
-                 <a href="{{ route('delete', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')">Delete</a>
+              <td class="flex flex-row">
+                {{-- <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3">Download</a> --}}
+                <a href="{{ url('/download', $item->file) }}" class="btn btn-success me-3 ">
+                <div class="flex flex-col py-1">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <div class="bg-neutral-100 w-4 h-0.5"></div>
+                </div>
+                </a>
+                <a href="{{ route('delete_memo', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')"><i class="fa-solid fa-trash-can"></i></a>
+                 
               </td> 
            </tr>
            
@@ -46,7 +53,7 @@
 
 
     </table>
-
+</div>
 {{-- upload new memorandum modal --}}
     <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -72,78 +79,35 @@
       </div>
 
 
-      @if(session('success'))
-    <style>
-        /* Add CSS styles for the success message */
-        #success-message {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
-        }
-    </style>
-    
-    <div id="success-message" class="alert alert-success position-fixed top-0 mt-5 ms-4">
-        {{ session('success') }}
-    </div>
-    
-    <script>
-        // Function to close the success message
-        function closeSuccessMessage() {
-            var successMessage = document.getElementById('success-message');
-            successMessage.style.opacity = '0';
-
-            // Wait for the transition to complete before hiding or removing the message
-            setTimeout(function () {
-                successMessage.style.display = 'none'; // or remove the success message from the DOM
-            }, 500); // Duration of the transition, should match the CSS transition duration
-        }
-
-        // Use pure JavaScript to detect when the modal is closed
-        document.getElementById('uploadModal').addEventListener('hidden.bs.modal', function () {
-            // Move the success message outside the modal
-            document.body.appendChild(document.getElementById('success-message'));
-
-            // Auto-close the success message after 3000 milliseconds (adjust the time as needed)
-            setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
-        });
-
-        // Close the success message after 3000 milliseconds even if the modal is not closed
-        setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
-    </script>
-@endif
-
-
-
-{{-- delete success message --}}
-@if(session('delete_success'))
-   <style>
-      /* Add CSS styles for the delete success message */
-      #delete-success-message {
-         opacity: 1;
-         transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
-      }
-   </style>
-   
-   <div id="delete-success-message" class="alert alert-success position-fixed top-0 mt-5  ms-4">
-      {{ session('delete_success') }}
-   </div>
-   
-   <script>
-      // Function to close the delete success message
-      function closeDeleteSuccessMessage() {
-         var deleteSuccessMessage = document.getElementById('delete-success-message');
-         deleteSuccessMessage.style.opacity = '0';
-
-         // Wait for the transition to complete before hiding or removing the message
-         setTimeout(function () {
-            deleteSuccessMessage.style.display = 'none'; // or remove the delete success message from the DOM
-         }, 500); // Duration of the transition, should match the CSS transition duration
-      }
-
-      // Auto-close the delete success message after 3000 milliseconds (adjust the time as needed)
-      setTimeout(closeDeleteSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
-   </script>
-@endif
-</div>
+@if(session('success'))
+      <style>
+          /* Add CSS styles for the success message */
+          #success-message {
+              opacity: 1;
+              transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+          }
+      </style>
+      
+      <div id="success-message" class="alert bg-[#6e914b] text-neutral-200 position-fixed bottom-0 mt-5 ms-4">
+          {{ session('success') }}
+      </div>
+      
+      <script>
+          // Function to close the success message
+          function closeSuccessMessage() {
+              var successMessage = document.getElementById('success-message');
+              successMessage.style.opacity = '0';
+  
+              // Wait for the transition to complete before hiding or removing the message
+              setTimeout(function () {
+                  successMessage.style.display = 'none'; // or remove the success message from the DOM
+              }, 500); // Duration of the transition, should match the CSS transition duration
+          }
+  
+          // Close the success message after 3000 milliseconds even if the modal is not closed
+          setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
+      </script>
+  @endif
 
 <!-- Load DataTables JS -->
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>

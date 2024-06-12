@@ -34,7 +34,7 @@ class MemoController extends Controller
     
         $data->save();
     
-        return redirect()->back();
+        return redirect()->back()->with('success', 'File uploaded successfully');
     }
     
 
@@ -66,7 +66,7 @@ class MemoController extends Controller
         // Delete record from the database
         $memo->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'File deleted successfully');
     }
 
     return redirect()->back()->with('error', 'File not found!');

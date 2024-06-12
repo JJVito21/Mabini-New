@@ -34,7 +34,7 @@
               <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>
-                 <a href="{{ url('/download', $item->file) }}" class="btn bg-lime-600 hover:bg-lime-700 text-white  me-3">Download</a>
+                 <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100  me-3">Download</a>
               </td> 
            </tr>
            

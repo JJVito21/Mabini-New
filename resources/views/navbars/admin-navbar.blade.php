@@ -4,7 +4,7 @@
     <nav id="desktop">
         <div class="flex flex-col">
             {{-- styled on scroll --}}
-            <a href="homepage" id="schoolName" class=" bg-neutral-100 flex justify-center items-center gap-3 w-screen py-4">
+            <a href="homepage" id="schoolName" class=" bg-neutral-100 flex justify-center items-center  w-screen py-4 gap-2">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
                 <h3 class="text-neutral-800 font-bold text-lg md:text-xl uppercase tracking-wider">Mabini Farm School
                 </h3>
@@ -14,16 +14,17 @@
                 class=" bg-[#044D0B] 
            w-screen py-2 navlinks text-neutral-100 text-lg relative flex justify-center items-center ">
            <div class="col ms-10">    
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="homepage">Home</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="memo_management">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="programs_management">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage">Home</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/memo_management">Memo</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/programs_management">Programs</a>
             </div>
-            <div class="col flex justify-end md:me-10">
-                <a class="nav-link dropdown-toggle ms-44" href="#" role="button" data-bs-toggle="dropdown"
+            <div class="col flex justify-end md:me-10 ms-44 gap-x-10 ">
+                <a href="/message_management" class="hover:text-[#E9AC32]"><i class="fa-regular fa-envelope text-xl"></i></a>
+                <a class="nav-link dropdown-toggle hover:text-[#E9AC32]" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 {{ Auth::user()->name }}
             </a>
-            <ul class="dropdown-menu font-sans">
+            <ul class="dropdown-menu font-sans ">
                 <li>
                     <div class="mx-3 text-lime-700">{{ Auth::user()->email }}</div>
                 </li>
@@ -37,11 +38,11 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
-                    <div class="dropdown-item">
-                        <form method="POST" action="{{ route('logout') }}">
+                    <div class="dropdown-item ">
+                        <form method="POST" action="{{ route('logout') }}" class="">
                             @csrf
 
-                            <a class="text-red-600 font-bold" href="route('logout')"
+                            <a class="text-red-600  font-bold " href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                                 {{ __('Log Out') }}
@@ -79,13 +80,19 @@
 
 
                         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
-                                href="homepage">Home</a></li>
+                                href="homepage">Home</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
-                                href="memo">Memo</a></li>
+                                href="memo_management">Memo</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm"
-                                href="programs">Programs</a></li>
+                                href="programs_management">Programs</a>
+                        </li>
+                        <li class="nav-iten">
+                        <a href="message_management" class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm">Messages</a>
+                        </li>
                         <div class="dropdown mt-3">
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <button class="btn dropdown-toggle ms-[-12px]" type="button" data-bs-toggle="dropdown">
                                 {{ Auth::user()->name }}
 
                             </button>

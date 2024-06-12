@@ -3,9 +3,7 @@
 @section('content')
 @include('navbars.admin-navbar')
 
-<head> 
-    <title>Mabini Farm School</title> 
-</head> 
+
 <div class="container">
     
     <div class="content">
