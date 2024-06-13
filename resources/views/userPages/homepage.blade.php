@@ -4,7 +4,7 @@
     @include('navbars.navbar')
 
 
-   <div class="mb-40 lg:-mb-56">
+   <div class="mb-40">
     <section>
       
         <div id="carouselHomepage" class="carousel slide" data-bs-ride="carousel">
@@ -146,45 +146,49 @@
     </div>
     </section>
     <section>
-        <div class="flex items-center justify-center mt-20">
-            <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-neutral-900">
-                why you should choose mabini
-            </h2>
-        </div>
-        <div class="flex flex-wrap flex-col md:flex-row items-center justify-center text-pretty px-20 my-20 gap-10">
-            <div class="flex-col lg:ps-10 max-w-[35rem]">
-                <p class="text-pretty ">
-                    "Auf der Heide blüht
-                    ein kleines Blümelein
-                    Und das heißt: Erika.
-                    Heiß von hunderttausend
-                    kleinen Bienelein
-                    Wird umschwärmt Erika.
-                    Denn ihr Herz ist voller Süßigkeit,
-                    Zarter Duft entströmt dem Blütenkleid
-                    Auf der Heide blüht
-                    ein kleines Blümelein
-                    Und das heißt: Erika.
-                    
-                    
-                    In der Heimat wohnt
-                    ein kleines Mägdelein
-                    Und das heißt: Erika.
-                    Dieses Mädel ist mein treues Schätzelein
-                    Und mein Glück, Erika.
-                    Wenn das Heidekraut rot-lila blüht,
-                    Singe ich zum Gruß ihr dieses Lied.
-                    Auf der Heide blüht
-                    ein kleines Blümelein
-                    Und das heißt: Erika."
-                </p>
-                <p class="italic">-Jian Vito, The Principal</p>
 
+
+            <div class="flex flex-col md:flex-row items-center justify-center text-pretty my-20 w-full text-neutral-100">
+                <div class="flex flex-col h-[40rem] w-screen bg-[#044D0B]">
+                    <h2 class="uppercase text-center lg:text-start text-[40px] md:text-[4rem] lg:text-[5rem] md:leading-[70px] font-black mt-20">
+                        why should you choose <span class=" border-neutral-100 border-b-2">mabini</span>
+                    </h2>
+
+                    <div class="p-20 max-w-[100rem] mx-auto">
+                        <span class="text-4xl "><i class="fa-solid fa-quote-left"></i></span> 
+                        <p class="text-pretty leading-8">
+                            Auf der Heide blüht
+                            ein kleines Blümelein
+                            Und das heißt: Erika.
+                            Heiß von hunderttausend
+                            kleinen Bienelein
+                            Wird umschwärmt Erika.
+                            Denn ihr Herz ist voller Süßigkeit,
+                            Zarter Duft entströmt dem Blütenkleid
+                            Auf der Heide blüht
+                            ein kleines Blümelein
+                            Und das heißt: Erika.
+                        </p>
+                        <span class="text-4xl "><i class="fa-solid fa-quote-right"></i></span> 
+
+                        <p class="italic mt-10">-Jian Vito, The Principal</p>
+                    </div>
+                </div>
+            
+                <div class="flex flex-col h-0 md:h-[40rem] w-0 md:w-[40rem]">
+                    <img src="images/principal.jpg" alt="" class="h-full">
+                </div>
             </div>
-            <div class="flex-col">
-                <img src="images/principal.jpg" alt="" class="md:w-[30rem]">
+
+            <div class="flex flex-col justify-center items-center mt-40">
+
+                <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B] mb-10">
+              read more about us
+                </h2>
+
+                <a href="about" type="button" class="button-slide font-medium" >Read More</a>
             </div>
-        </div>
+
     </section>
    </div>
     @include('footer.footer')

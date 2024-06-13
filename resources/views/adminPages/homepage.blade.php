@@ -3,7 +3,7 @@
 @section('content')
 @include('navbars.admin-navbar')
 
-<div class="mb-40 lg:-mb-56">
+<div class="mb-40 lg:mb-56">
 
     
     <div class="content">

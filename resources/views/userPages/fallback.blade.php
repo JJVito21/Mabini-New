@@ -3,11 +3,11 @@
 @section('content')
 @include('navbars.navbar')
 
-<div class="mb-40 lg:-mb-56">
+<div class="mb-40">
     
 <div class="flex flex-col md:flex-row items-center justify-center mt-20 lg:mt-56 gap-x-20 gap-y-5">
     <div class="flex flex-col">
-        <img class="w-40 lg:w-80" src="images/mascot.png" alt="sad baby cow with electrical plug tail sitting down">
+        <img class="w-40 lg:w-80" src="/images/mascot.png" alt="sad baby cow with electrical plug tail sitting down">
     </div>
     <div class="flex flex-col gap-y-2">
         <h1 class="font-koho font-bold text-4xl lg:text-[4rem] text-gray-800">

@@ -4,7 +4,7 @@
 @include('navbars.admin-navbar')
 
 
-<div class="mb-40 lg:-mb-56 container">
+<div class="mb-40 lg:mb-56 container">
 
     
     <div class="content">

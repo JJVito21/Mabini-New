@@ -8,7 +8,7 @@
 <!-- Load DataTables CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
 
-<div class="mb-40 lg:-mb-20 container">
+<div class="mb-40 lg:mb-56 container">
 
 <div class="flex items-center justify-center mt-20">
 

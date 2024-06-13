@@ -3,7 +3,7 @@
 @section('content')
 @include('navbars.navbar')
 
-<div class="mb-40 lg:-mb-56">
+<div class="mb-40">
 
 <section id="contact-banner" class="h-80 md:h-[30rem] mb-20">
   <div class="flex flex-row justify-center items-center h-full gap-10 md:gap-20">
@@ -49,18 +49,19 @@
   </form>
 
   </div>
-  <div class="flex flex-col justify-items-center w-80 capitalize text-gray-900 gap-2 ">
-    <h4 class="font-bold underline mb-1">direct contact</h4>
-    <h5 class="font-medium">address</h5>
-    <p class="text-base">Insert Lorem Ipsum here</p>
-    <h5 class="font-medium">email address</h5>
-    <p class="text-base">example@email.com</p>
-    <h5 class="font-medium">mobile number</h5>
-    <p class="text-base">+63 999 999 9999</p>
-    <h5 class="font-medium">telephone number</h5>
-    <p class="text-base">+63 999 999 9999</p>
-    <h5 class="font-medium">socials</h5>
-    <p class="text-base">facebook.com/mabininhscadiz</p>
+  <div class="flex flex-col justify-items-center w-80  text-gray-900 gap-2 ">
+    
+    <h4 class="font-bold underline mb-1 capitalize">direct contact</h4>
+    <h5 class="font-medium capitalize">address</h5>
+    <p class="text-base capitalize">Insert Lorem Ipsum here</p>
+    <h5 class="font-medium capitalize">email address</h5>
+    <p class="text-base capitalize">example@email.com</p>
+    <h5 class="font-medium capitalize">mobile number</h5>
+    <p class="text-base capitalize">+63 999 999 9999</p>
+    <h5 class="font-medium capitalize">telephone number</h5>
+    <p class="text-base capitalize">+63 999 999 9999</p>
+    <h5 class="font-medium capitalize">socials</h5>
+    <a href="https://www.facebook.com/mabininhscadiz" class="text-base hover:underline hover:text-lime-700">facebook.com/mabininhscadiz</a>
   </div>
 </div>
 </section>

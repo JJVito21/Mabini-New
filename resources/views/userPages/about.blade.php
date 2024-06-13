@@ -3,7 +3,7 @@
 @section('content')
     @include('navbars.navbar')
 
-<div class="mb-40 lg:-mb-56">
+<div class="mb-40">
 
     <section id="about-banner" class="h-80 md:h-[30rem] mb-20 ">
        <div class="relative w-screen">

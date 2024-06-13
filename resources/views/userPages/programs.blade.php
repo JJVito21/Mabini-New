@@ -2,7 +2,7 @@
 
 @section('content')
 @include('navbars.navbar')
-<div class="mb-40 lg:-mb-56">
+<div class="mb-40">
 
 <section>
     <div class="container mt-20 md:mt-36"">
