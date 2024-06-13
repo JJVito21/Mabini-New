@@ -9,7 +9,7 @@
     <div class="flex flex-col">
         <img class="w-40 lg:w-80" src="images/mascot.png" alt="sad baby cow with electrical plug tail sitting down">
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-y-2">
         <h1 class="font-koho font-bold text-4xl lg:text-[4rem] text-gray-800">
             404 <span class="font-sans font-medium">Error</span>
         </h1>

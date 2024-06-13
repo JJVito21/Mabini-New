@@ -9,11 +9,6 @@ use App\Models\Memo;
 
 class MemoController extends Controller
 {
-    
-    public function showForm(){
-        return view('upload');
-    }
-
     public function uploadFile(Request $request)
     {
         $request->validate([

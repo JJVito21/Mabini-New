@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactMessages extends Model
+class Procurement extends Model
 {
     use HasFactory;
-    protected $table = 'contact';
+    protected $table = 'procurement';
     
     protected $fillable = [
-        'name',
-        'email',
-        'message',
-        'userIP'
+        'itemName',
+        'supplier',
+        'quantity'
     ];
-
-    
 }

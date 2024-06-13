@@ -33,9 +33,10 @@
                 <h5 class="card-title font-medium">Name: {{ $messageItem -> name }}</h5>
                 </div>
                 <div class="flex flex-row justify-end -mt-8">
-                <a href="{{ route('delete_message', $messageItem->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')"><i class="fa-solid fa-trash-can"></i></a>
+                <a href="{{ route('delete_message', $messageItem->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this message?')"><i class="fa-solid fa-trash-can"></i></a>
                 </div>
                 <h6 class="card-subtitle mb-2 ">Email: <span class="text-lime-700">{{ $messageItem -> email }}</span></h6>
+                <h6 class="card-subtitle mb-2 ">Sender IP: <span class="text-blue-500">{{ $messageItem -> userIP }}</span></h6>
                 <h6 class="card-subtitle mt-10 mb-2 text-body-secondary">Message:</h6>
                 <div class="card px-1 pt-1 pb-10  bg-gray-200">
                     <p class="card-text">{{ $messageItem -> message }}</p>

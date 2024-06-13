@@ -19,7 +19,7 @@
         </h2>
     </div>
     <div class="mt-20 mb-20  lg:mb-auto mx-auto w-[90%] overflow-hidden">
-        <table id="messageTable" class="display" style="width:100%">
+        <table id="messageTable" class="display  table table-light table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -35,7 +35,7 @@
                   <td>{{ $item->created_at->format('Y-m-d') }}</td>
                   <td>
                      <a href="{{ route('view_message',$item->id) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100  me-3">View</a>
-                     <a href="{{ route('delete_message', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?')"><i class="fa-solid fa-trash-can"></i></a>
+                     <a href="{{ route('delete_message', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this message?')"><i class="fa-solid fa-trash-can"></i></a>
                   </td> 
                </tr>
                

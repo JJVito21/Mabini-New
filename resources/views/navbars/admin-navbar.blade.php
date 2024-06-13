@@ -4,7 +4,7 @@
     <nav id="desktop">
         <div class="flex flex-col">
             {{-- styled on scroll --}}
-            <a href="homepage" id="schoolName" class=" bg-neutral-100 flex justify-center items-center  w-screen py-4 gap-2">
+            <a href="homepage_management" id="schoolName" class=" bg-neutral-100 flex justify-center items-center  w-screen py-4 gap-2">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
                 <h3 class="text-neutral-800 font-bold font-kaisei text-lg md:text-xl uppercase tracking-wider">Mabini Farm School
                 </h3>
@@ -14,9 +14,10 @@
                 class=" bg-[#044D0B] 
            w-screen py-2 navlinks font-kaisei text-neutral-100 text-lg relative flex justify-center items-center ">
            <div class="col ms-10">    
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage">Home</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage_management">Home</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/memo_management">Memo</a>
                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/programs_management">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/procurement_management">Procurement</a>
             </div>
             <div class="col flex justify-end md:me-10 ms-44 gap-x-10 ">
                 <a href="/message_management" class="hover:text-[#E9AC32]"><i class="fa-regular fa-envelope text-xl"></i></a>
@@ -63,7 +64,7 @@
 
     <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md ">
         <div class="container-fluid">
-            <a href="homepage" class="flex"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
+            <a href="homepage_management" class="flex"> <img src="{{ URL('images/logo2.png') }}" alt="logo"
                     class="w-16 ">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -81,13 +82,16 @@
 
 
                         <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
-                                href="homepage">Home</a>
+                                href="homepage_management">Home</a>
                         </li>
                         <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
                                 href="memo_management">Memo</a>
                         </li>
                         <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
                                 href="programs_management">Programs</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm"
+                            href="procurement_management">Procurement</a>
                         </li>
                         <li class="nav-iten">
                         <a href="message_management" class="nav-link font-kaisei hover:text-[#E9AC32] transition duration-300 text-sm">Messages</a>

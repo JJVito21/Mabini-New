@@ -22,7 +22,7 @@
         <button type="button" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100" data-bs-toggle="modal" data-bs-target="#uploadModal"><i class="fa-solid fa-plus"></i> Add New
         </button>
     </div>
-    <table id="memoTable" class="display" style="width:100%">
+    <table id="memoTable" class="display  table table-light table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>File Name</th>
@@ -67,7 +67,7 @@
                     <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-4 mb-5 ">
-                            <input class="text-gray-900" type="file" name="file" id="file" class="form-control" accept=".pdf">
+                            <input class="text-gray-900" type="file" name="file" id="file" class="form-control" accept=".pdf" required>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Upload</button>

@@ -20,7 +20,7 @@
 
 <div class="mt-20 mb-20  lg:mb-auto mx-auto w-[90%] overflow-hidden">
 
-    <table id="memoTable" class="display" style="width:100%">
+    <table id="memoTable" class="display table table-light table-striped" style="width:100%">
         <thead>
             <tr >
                 <th>File Name</th>
@@ -32,7 +32,7 @@
             @foreach ($data as $item)
             
             <tr>
-              <td><i class="fa-solid fa-file-pdf text-red-600"></i>{{ $item->file }}</td>
+              <td><i class="fa-solid fa-file-pdf text-red-600 px-1"></i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>
                 <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100  hover:text-neutral-100 ">
