@@ -35,12 +35,11 @@
             {{-- </div> --}}
             <div class="carousel-inner">
 
-              @foreach ($imageData as $item)
-
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
-                </div>
-              @endforeach
+                @foreach ($imageData as $index => $item)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" data-bs-interval="2000">
+                        <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
+                    </div>
+                @endforeach
              {{-- <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
