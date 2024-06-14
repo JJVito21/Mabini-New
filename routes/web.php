@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProcurementController;
@@ -23,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 
 // Admin Routes
-Route::get('/homepage_management', function () {
-    return view('adminPages.homepage');
-})->middleware(['auth', 'verified'])->name('/homepage_management');
+// Route::get('/homepage_management', function () {
+//     return view('adminPages.homepage');
+// })->middleware(['auth', 'verified'])->name('/homepage_management');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -33,6 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('homepage_management', [CarouselController::class, 'homepage_management'])->name('homepage_management');
+    Route::post('/uploadImage', [CarouselController::class, 'uploadImage'])->name('uploadImage');
+    Route::post('/delete_image{imageData}', [CarouselController::class, 'deleteImage'])->name('delete_image');
+
+});
 Route::middleware('auth')->group(function () {
     Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
 
@@ -63,6 +71,7 @@ Route::get('memo', [UserController::class, 'memo']);
 Route::get('programs', [UserController::class, 'programs']);
 Route::get('procurement', [UserController::class, 'procurement']);
 Route::get('about', [UserController::class, 'about']);
+Route::get('faculty', [UserController::class, 'faculty']);
 Route::get('contact', [UserController::class, 'contact']) ->name ('contact');
 Route::post('send', [UserController::class, 'send']) ->name ('send');
 

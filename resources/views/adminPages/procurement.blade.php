@@ -10,6 +10,8 @@
 
 <div class="mb-40 lg:mb-56 container">
 
+<section>
+
 <div class="flex items-center justify-center mt-20">
 
     <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
@@ -126,6 +128,7 @@
         </div>
     </div>
   </div>
+</section>
 
 
 </div>

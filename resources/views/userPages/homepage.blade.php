@@ -8,15 +8,23 @@
     <section>
       
         <div id="carouselHomepage" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+            {{-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="0"
                     class="active carouselButton" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="1"
                     class=" carouselButton" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="2"
                     class=" carouselButton" aria-label="Slide 3"></button>
-            </div>
+            </div> --}}
             <div class="carousel-inner">
+                @foreach ($imageData as $item)
+    
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
+                </div>
+                @endforeach
+                </div>
+            {{-- <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
                 </div>
@@ -26,12 +34,16 @@
                 <div class="carousel-item">
                     <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
                 </div>
-            </div>
+            </div> --}}
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomepage"
                 data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselHomepage"
                 data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
             </button>
         </div>
     </section>

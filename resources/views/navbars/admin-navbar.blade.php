@@ -1,10 +1,10 @@
 {{-- @section('content')  --}}
 {{-- desktop navbar --}}
-<section class="hidden md:block desktop fixed z-[99] top-0">
+<section class="hidden lg:block desktop fixed z-[99] top-0">
     <nav id="desktop">
         <div class="flex flex-col">
             {{-- styled on scroll --}}
-            <a href="homepage_management" id="schoolName" class=" bg-neutral-100 flex justify-center items-center  w-screen py-4 gap-2">
+            <a href="homepage_management" id="schoolName" class=" bg-neutral-100 flex justify-center items-center h-[6rem] w-screen py-4 gap-2">
                 <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-16">
                 <h3 class="text-neutral-800 font-bold font-kaisei text-lg md:text-xl uppercase tracking-wider">Mabini Farm School
                 </h3>
@@ -60,7 +60,7 @@
 </section>
 
 {{-- mobile sidebar --}}
-<section class="block md:hidden z-[99]">
+<section class="block lg:hidden z-[99]">
 
     <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md ">
         <div class="container-fluid">
@@ -156,7 +156,7 @@
 <style>
     /* Transition classes for sliding effect */
     .slide-up {
-        transform: translateY(-72%);
+        transform: translateY(-6rem);
         transition: transform 0.3s ease-in-out;
     }
 

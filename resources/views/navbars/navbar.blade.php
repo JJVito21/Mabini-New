@@ -13,11 +13,32 @@
                 class=" bg-[#044D0B] flex justify-center items-center 
            w-screen py-2 navlinks font-kaisei text-neutral-100 gap-x-10 text-lg ">
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="/">Home</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="memo">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="programs">Programs</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="procurement">Procurement</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="about">About Us</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300" href="contact">Contact Us</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/memo">Memo</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/programs">Programs</a>
+                <a class=" hover:text-[#E9AC32] transition duration-300" href="/procurement">Procurement</a>
+                {{-- <a class=" hover:text-[#E9AC32] transition duration-300" href="about">About Us</a> --}}
+                <span class="dropdown">
+                    <a class="hover:text-[#E9AC32] transition duration-300 flex items-center" href="#" role="button" aria-expanded="false">
+                        About Us 
+                        <span class="ml-1 w-2 [&>svg]:h-5 [&>svg]:w-5 flex-shrink-0 mt-1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor">
+                              <path
+                                fill-rule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </a>
+                    
+                    <ul class="dropdown-menu font-koho ">
+                      <li class=" hover:border-lime-600 hover:border-r-4 transition duration-300 w-[200px]"><a class="dropdown-item font-bold hover:text-lime-700" href="/faculty">Faculty</a></li>
+                      <li class=" hover:border-lime-600 hover:border-r-4 transition duration-300 w-[200px]"><a class="dropdown-item font-bold hover:text-lime-700" href="/about">History, Mission, Vision</a></li>
+                    </ul>
+                  </span>
+                <a class="hover:text-[#E9AC32] transition duration-300" href="contact">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -52,7 +73,18 @@
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="memo">Memo</a></li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="programs">Programs</a></li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="procurement">Procurement</a></li>
-        <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="about">About Us</a></li>
+        {{-- <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="about"></a></li> --}}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hover:text-[#E9AC32] transition duration-300 text-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="contact">Contact Us</a></li>
 
                 </ul>
@@ -103,5 +135,14 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/* styling bootstrap's dropdown toggle into hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/* background color for when dropdown option is clicked */
+.dropdown-item:active, 
+.dropdown-item.active {
+    background-color:#f8f8f8 !important; 
+}
 </style>
 {{-- @endsection --}}
