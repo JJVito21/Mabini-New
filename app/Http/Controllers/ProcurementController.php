@@ -13,19 +13,19 @@ class ProcurementController extends Controller
             'supplier' =>  'required', 
             'quantity' =>  'required',
         ]);
-        
+
         $procurementItem = [   
             'itemName' => $request -> itemName,          
             'supplier' =>  $request -> supplier, 
             'quantity' =>  $request -> quantity, 
 
         ];
-        
+
         $newProcurement = Procurement::create($procurementItem);
 
         return redirect()->route('procurement_management')->with('success', 'Item Added!');
     }
-    
+
     public function procurement_management()
     {
         $procurementItem = Procurement::all()->reverse();
@@ -57,6 +57,5 @@ class ProcurementController extends Controller
         $procurementItem->delete();
         return redirect()->route('procurement_management')->with('success', 'Item deleted successfully');
     }
-    
-}
 
+}

@@ -104,6 +104,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                @foreach ($procurementItem as $item)
   
                 <form method="GET" action="{{ route('updateItem', ['procurementItem' => $item->id]) }}"  enctype="multipart/form-data">
                     @csrf
@@ -124,6 +125,7 @@
                         <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save</button>
                     </div>
                 </form>
+                @endforeach
             </div>
         </div>
     </div>
