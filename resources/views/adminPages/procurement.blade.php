@@ -41,7 +41,7 @@
               <td>{{ $item->itemName }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>{{ $item->supplier }}</td>
-              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link"></i></a></td>
+              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link fa-lg transition duration-300 hover:text-blue-600 "></i></a></td>
 
               <td>
                 {{-- {{ url('/download', $item->file) }} --}}
@@ -51,7 +51,7 @@
                 </div>
                 </button>
                 <a href="{{ route('delete_procurement', $item->id) }}" 
-                class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"><i class="fa-solid fa-trash-can"></i></a>
+                class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"><i class="fa-solid fa-trash-can "></i></a>
                  
               </td> 
            </tr>

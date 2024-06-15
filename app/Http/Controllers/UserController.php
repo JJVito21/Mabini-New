@@ -12,7 +12,7 @@ class UserController extends Controller
     //homepage
     public function homepage()
     {
-        $imageData = Carousel::all()->reverse();
+        $imageData = Carousel::all();
         return view('userPages.homepage' , ['imageData' => $imageData]);
     }
     // public function homepage_management()

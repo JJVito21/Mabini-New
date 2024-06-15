@@ -7,7 +7,7 @@
             <img src="{{ URL('images/logo2.png') }}" alt="logo" class="w-32 mx-auto">
 
               <p class="mt-2 text-sm text-gray-200 font-medium tracking-widest ">MABINI FARM SCHOOL</p>
-              <div class="mt-4">
+              {{-- <div class="mt-4">
                   <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                       <a class="text-gray-500 cursor-pointer hover:text-gray-700">
                           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,20 +40,20 @@
                           </svg>
                       </a>
                   </span>
-              </div>
+              </div> --}}
           </div>
           <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
               <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                  <h2 class="mb-3 text-sm font-medium tracking-widest text-yellow-600 uppercase title-font">About</h2>
+                  <h2 class="mb-3 text-sm font-medium tracking-widest text-yellow-600 uppercase title-font">About </h2>
                   <nav class="mb-10 list-none">
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Company</a>
+                          <a href="/faculty" class="text-neutral-300 cursor-pointer hover:text-gray-900">The Faculty</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Careers</a>
+                          <a href="/about" class="text-neutral-300 cursor-pointer hover:text-gray-900">History, Mission, Vision</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Blog</a>
+                          <a href="https://facebook.com/mabininhscadiz" class="text-neutral-300 cursor-pointer hover:text-gray-900">Facebook Page</a>
                       </li>
                   </nav>
               </div>
@@ -61,13 +61,13 @@
                   <h2 class="mb-3 text-sm font-medium tracking-widest text-yellow-600 uppercase title-font">Support</h2>
                   <nav class="mb-10 list-none">
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Contact Support</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">Contact Support</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Help Resources</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">Help Resources</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Release Updates</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">Release Updates</a>
                       </li>
                   </nav>
               </div>
@@ -76,13 +76,13 @@
                   </h2>
                   <nav class="mb-10 list-none">
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Terms &amp; Privacy</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">Terms &amp; Privacy</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Pricing</a>
+                          <a href="https://privacy.gov.ph/transparency-seal/" class="text-neutral-300 cursor-pointer hover:text-gray-900">Transparency Seal</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">FAQ</a>
+                          <a href="https://privacy.gov.ph/data-privacy-act/" class="text-neutral-300 cursor-pointer hover:text-gray-900">Data Privacy Act</a>
                       </li>
                   </nav>
               </div>
@@ -90,13 +90,13 @@
                   <h2 class="mb-3 text-sm font-medium tracking-widest text-yellow-600 uppercase title-font">Contact</h2>
                   <nav class="mb-10 list-none">
                       <li class="mt-3">
-                          <a href="contact" class="text-gray-500 cursor-pointer hover:text-gray-900">Send a Message</a>
+                          <a href="contact" class="text-neutral-300 cursor-pointer hover:text-gray-900">Send a Message</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">Request a Quote</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">Request a Quote</a>
                       </li>
                       <li class="mt-3">
-                          <a class="text-gray-500 cursor-pointer hover:text-gray-900">+123-456-7890</a>
+                          <a class="text-neutral-300 cursor-pointer hover:text-gray-900">+123-456-7890</a>
                       </li>
                   </nav>
               </div>

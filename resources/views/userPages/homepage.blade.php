@@ -16,6 +16,12 @@
                 <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="2"
                     class=" carouselButton" aria-label="Slide 3"></button>
             </div> --}}
+            <div class="carousel-indicators">
+                @foreach ($imageData as $index => $item)
+                    <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="{{ $index }}"
+                        class="{{ $index == 0? 'active' : '' }} carouselButton" aria-label="Slide {{ $index + 1 }}"></button>
+                @endforeach
+            </div>
             <div class="carousel-inner">
 
                 @foreach ($imageData as $index => $item)
@@ -23,18 +29,9 @@
                         <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
                     </div>
                 @endforeach
-                </div>
-             {{-- <div class="carousel-inner">
-                 <div class="carousel-item active">
-                     <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                 </div>
-                 <div class="carousel-item">
-                     <img src="images/brigada.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                 </div>
-                 <div class="carousel-item">
-                     <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                 </div>
-             </div> --}}
+
+            </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomepage"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

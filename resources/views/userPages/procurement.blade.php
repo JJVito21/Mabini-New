@@ -36,7 +36,7 @@
               <td>{{ $item->itemName }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>{{ $item->supplier }}</td>
-              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link"></i></a></td>
+              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link fa-lg transition duration-300 hover:text-blue-600 "></i></a></td>
            </tr>
            
             @endforeach

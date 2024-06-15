@@ -33,6 +33,13 @@
                 {{-- <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="2" --}}
                     {{-- class=" carouselButton" aria-label="Slide 3"></button> --}}
             {{-- </div> --}}
+
+            <div class="carousel-indicators">
+              @foreach ($imageData as $index => $item)
+                  <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="{{ $index }}"
+                      class="{{ $index == 0? 'active' : '' }} carouselButton" aria-label="Slide {{ $index + 1 }}"></button>
+              @endforeach
+            </div>
             <div class="carousel-inner">
 
                 @foreach ($imageData as $index => $item)
