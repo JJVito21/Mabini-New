@@ -38,9 +38,10 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('homepage_management', [CarouselController::class, 'homepage_management'])->name('homepage_management');
     Route::post('/uploadImage', [CarouselController::class, 'uploadImage'])->name('uploadImage');
-    Route::post('/delete_image{imageData}', [CarouselController::class, 'deleteImage'])->name('delete_image');
-
+    Route::get('/delete_image{id}', [CarouselController::class, 'delete'])->name('delete_image');
+    // Route::put('/update_image/{id}', [CarouselController::class, 'updateImage'])->name('update_image');
 });
+
 Route::middleware('auth')->group(function () {
     Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
 
@@ -49,8 +50,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('procurement_management', [ProcurementController::class, 'procurement_management'])->name('procurement_management');
     Route::post('/uploadItem', [ProcurementController::class, 'uploadProcuredItem'])->name('uploadItem');
-    Route::get('/delete_procurement{procurementItem}', [ProcurementController::class, 'delete'])->name('delete_procurement');
     Route::get('/updateItem{procurementItem}/', [ProcurementController::class, 'updateProcuredItem'])->name('updateItem');
+    Route::get('/delete_procurement{procurementItem}', [ProcurementController::class, 'delete'])->name('delete_procurement');
 });
 
 Route::middleware('auth')->group(function () {

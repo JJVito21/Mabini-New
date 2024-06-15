@@ -19,22 +19,22 @@
             <div class="carousel-inner">
 
                 @foreach ($imageData as $index => $item)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" data-bs-interval="2000">
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" >
                         <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
                     </div>
                 @endforeach
                 </div>
-            {{-- <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/brigada.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-            </div> --}}
+             {{-- <div class="carousel-inner">
+                 <div class="carousel-item active">
+                     <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+                 <div class="carousel-item">
+                     <img src="images/brigada.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+                 <div class="carousel-item">
+                     <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+             </div> --}}
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomepage"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('procurement', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('itemName');
             $table->string('supplier');
-            $table->string('quantity');
-
+            $table->string('link');
+            $table->timestamps();
+            
         });
     }
 

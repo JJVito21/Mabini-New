@@ -23,7 +23,7 @@
         </div>
         
         <div class="mt-40">
-          <p class="font-medium text-base md:text-lg mx-10 mb-10 md:mb-20">The <span class="uppercase text-lime-700 ">homepage carousel slider</span> changes appear here.</p>
+          {{-- <p class="font-bold text-lg md:text-xl mx-10 mb-10 md:mb-20">The <span class="uppercase text-lime-700 ">homepage carousel slider</span> changes appear here.</p> --}}
           <div id="carouselHomepage" class="carousel slide" data-bs-ride="carousel">
             {{-- <div class="carousel-indicators"> --}}
                 {{-- <button type="button" data-bs-target="#carouselHomepage" data-bs-slide-to="0" --}}
@@ -36,7 +36,7 @@
             <div class="carousel-inner">
 
                 @foreach ($imageData as $index => $item)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" data-bs-interval="2000">
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" >
                         <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
                     </div>
                 @endforeach
@@ -69,9 +69,10 @@
         <section class="mt-40">
       
 
+          {{-- <p class="font-bold text-lg md:text-xl mx-10 mb-10">The <span class="uppercase text-lime-700 ">homepage carousel slider</span> can be updated in this table.</p> --}}
+          {{-- <p class="font-medium font-sans text-base md:text-lg  mx-10 mb-10 md:mb-20">Older images will appear in the carousel first, and newer images will appear chronologically.</p> --}}
           <div class="my-40 lg:mb-auto mx-auto w-[90%] overflow-hidden">
-            <p class="font-medium text-base md:text-lg mb-10 md:mb-20">The <span class="uppercase text-lime-700 ">homepage carousel slider</span> can be updated in this table.</p>
-  
+            
               <div class="flex justify-end">
                   <button type="button" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100" data-bs-toggle="modal" data-bs-target="#uploadImageModal"><i class="fa-solid fa-plus"></i> Add Image
                   </button>
@@ -92,12 +93,12 @@
                         {{-- <td>{{ $item->image }}</td> --}}
                         <td>{{ $item->created_at->format('Y-m-d') }}</td>
           
-                        <td class="flex flex-row">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#editItemModal" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
+                        <td >
+                          {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#editItemModal" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
                           <div class="flex flex-col py-1">
                               <i class="fa-solid fa-pen"></i>
                           </div>
-                          </button>
+                          </button> --}}
                           <a href="{{ route('delete_image', $item->id) }}" 
                           class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this image?')"><i class="fa-solid fa-trash-can"></i></a>
                            
@@ -148,38 +149,44 @@
                   </div>
                 </div>
           
-          {{-- edit procurement item modal --}}
+          {{-- update carousel image modal --}}
           {{-- <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title ms-auto font-medium text-lime-800" id="exampleModalLabel">Edit Procurement Item</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-            
-                          <form method="GET" action="{{ route('updateItem', ['procurementItem' => $item->id]) }}"  enctype="multipart/form-data">
-                              @csrf
-          
-                              <div class="mb-3">
-                                <label for="itemName" class="form-label font-sans font-medium capitalize">Item Name</label>
-                                <input type="text" class="form-control border-0 bg-gray-300 rounded" name="itemName" id="itemName" value="{{ $item->itemName }}" required>
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title ms-auto font-bold text-lime-900" id="exampleModalLabel">Update Carousel Image</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="modal-title ms-auto font-medium text-gray-800 text-center" id="exampleModalLabel">
+                      The image must be landscape and have a <strong>1280 x 660px resolution</strong> for the best fit and quality.</p>
+                      
+                      <form method="POST" action="{{ route('update_image', $item->id) }}" enctype="multipart/form-data">
+                        @csrf
+                          @method('put')
+
+                          <div class="file-upload w-80 md:w-96">
+                              <div class="image-upload-wrap">
+                                <input class="file-upload-input" type='file' name="image" id="image" onchange="readURL(this);" accept=".jpg, .jpeg, .png, .webp" />
+                                <div class="drag-text">
+                                  <h3>Drag and drop an image or <br>click to select</h3>
+                                </div>
                               </div>
-                              <div class="mb-3">
-                                <label for="supplier" class="form-label font-sans font-medium capitalize">Supplier</label>
-                                <input type="text" class="form-control border-0 bg-gray-300 rounded" name="supplier" id="supplier" value="{{ $item->supplier }}" required>
+                              <div class="file-upload-content">
+                                <img class="file-upload-image" src="#" alt="your image" />
+                                <div class="image-title-wrap">
+                                  <button type="button" onclick="removeUpload()" class="btn bg-red-600 hover:bg-red-800 text-neutral-100 hover:text-neutral-100">Remove <span class="image-title font-medium">Uploaded Image Name</span></button>
+                                </div>
                               </div>
-                              <div class="mb-3">
-                                <label for="quantity" class="form-label font-sans font-medium capitalize">Quantity</label>
-                                <input type="number" class="form-control border-0 bg-gray-300 rounded" name="quantity" id="quantity" value="{{ $item->quantity }}" required>
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save</button>
-                              </div>
-                          </form>
-                      </div>
+                            </div>
+
+                          <div class="modal-footer">
+                              <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Upload</button>
+                          </div>
+                      </form>
                   </div>
               </div>
+             </div>
             </div> --}}
          
       </section>

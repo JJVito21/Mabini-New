@@ -11,13 +11,13 @@ class ProcurementController extends Controller
         $request->validate([            
             'itemName' => 'required',          
             'supplier' =>  'required', 
-            'quantity' =>  'required',
+            'link' =>  'required',
         ]);
 
         $procurementItem = [   
             'itemName' => $request -> itemName,          
             'supplier' =>  $request -> supplier, 
-            'quantity' =>  $request -> quantity, 
+            'link' =>  $request -> link, 
 
         ];
 
@@ -36,14 +36,14 @@ class ProcurementController extends Controller
         $request->validate([            
             'itemName' => 'required',          
             'supplier' =>  'required', 
-            'quantity' =>  'required',
+            'link' =>  'required',
         ]);
 
           // Update other form data
           $updatedProcurementItem = [
             'itemName' => $request->itemName,            
             'supplier' => $request->supplier,
-            'quantity' => $request->quantity,
+            'link' => $request->link,
 
         ];
 

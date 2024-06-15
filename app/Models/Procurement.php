@@ -13,6 +13,6 @@ class Procurement extends Model
     protected $fillable = [
         'itemName',
         'supplier',
-        'quantity'
+        'link'
     ];
 }

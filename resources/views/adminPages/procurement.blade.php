@@ -30,7 +30,7 @@
                 <th>Item Name</th>
                 <th>Date</th>
                 <th>Supplier</th>
-                <th>Quantity</th>
+                <th>Link</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -41,9 +41,9 @@
               <td>{{ $item->itemName }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>{{ $item->supplier }}</td>
-              <td>{{ $item->quantity }}</td>
+              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link"></i></a></td>
 
-              <td class="flex flex-row">
+              <td>
                 {{-- {{ url('/download', $item->file) }} --}}
                 <button type="button" data-bs-toggle="modal" data-bs-target="#editItemModal" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
                 <div class="flex flex-col py-1">
@@ -83,8 +83,8 @@
                           <input type="text" class="form-control border-0 bg-gray-300 rounded" name="supplier" id="supplier" required>
                         </div>
                         <div class="mb-3">
-                          <label for="quantity" class="form-label font-sans font-medium capitalize">Quantity</label>
-                          <input type="number" class="form-control border-0 bg-gray-300 rounded" name="quantity" id="quantity" required>
+                          <label for="link" class="form-label font-sans font-medium capitalize">Link</label>
+                          <input type="url" class="form-control border-0 bg-gray-300 rounded" name="link" id="link" required>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Submit</button>
@@ -118,8 +118,8 @@
                       <input type="text" class="form-control border-0 bg-gray-300 rounded" name="supplier" id="supplier" value="{{ $item->supplier }}" required>
                     </div>
                     <div class="mb-3">
-                      <label for="quantity" class="form-label font-sans font-medium capitalize">Quantity</label>
-                      <input type="number" class="form-control border-0 bg-gray-300 rounded" name="quantity" id="quantity" value="{{ $item->quantity }}" required>
+                      <label for="link" class="form-label font-sans font-medium capitalize">Link</label>
+                      <input type="url" class="form-control border-0 bg-gray-300 rounded" name="link" id="link" value="{{ $item->link }}" required>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save</button>

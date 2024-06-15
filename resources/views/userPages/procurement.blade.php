@@ -26,7 +26,7 @@
                 <th>Item Name</th>
                 <th>Date</th>
                 <th>Supplier</th>
-                <th>Quantity</th>
+                <th>Link</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
               <td>{{ $item->itemName }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
               <td>{{ $item->supplier }}</td>
-              <td>{{ $item->quantity }}</td>
+              <td><a href="{{ $item->link }}"><i class="fa-solid fa-link"></i></a></td>
            </tr>
            
             @endforeach
