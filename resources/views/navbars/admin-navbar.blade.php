@@ -1,6 +1,6 @@
 {{-- @section('content')  --}}
 {{-- desktop navbar --}}
-<section class="hidden lg:block desktop fixed z-[99] top-0">
+<section class="hidden md:block desktop fixed z-[99] top-0">
     <nav id="desktop">
         <div class="flex flex-col">
             {{-- styled on scroll --}}
@@ -10,36 +10,36 @@
                 </h3>
             </a>
             {{-- end of styled on scroll --}}
-            <div
-                class=" bg-[#044D0B] 
+            <div class=" bg-[#044D0B] 
            w-screen py-2 navlinks font-kaisei text-neutral-100 text-lg relative flex justify-center items-center ">
-           <div class="col ms-10">    
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage_management">Home</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/memo_management">Memo</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/programs_management">Programs</a>
-                <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/procurement_management">Procurement</a>
-            </div>
-            <div class="col flex justify-end md:me-10 ms-44 gap-x-10 ">
-                <a href="/message_management" class="hover:text-[#E9AC32]"><i class="fa-regular fa-envelope text-xl"></i></a>
-                <a class="nav-link dropdown-toggle hover:text-[#E9AC32]" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                {{ Auth::user()->name }}
-            </a>
-            <ul class="dropdown-menu font-sans ">
-                <li>
-                    <div class="mx-3 text-lime-700">{{ Auth::user()->email }}</div>
-                </li>
+            <div class="col ms-10 flex justify-start">    
+                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/homepage_management">Home</a>
+                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/memo_management">Memo</a>
+                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/programs_management">Programs</a>
+                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/procurement_management">Procurement</a>
+                 <a class=" hover:text-[#E9AC32] transition duration-300 mx-3" href="/faculty_management">Faculty</a>
+             </div>
+             <div class="col flex justify-end md:me-10 gap-x-6 ">
+                 <a href="/message_management" class="hover:text-[#E9AC32]"><i class="fa-regular fa-envelope text-xl"></i></a>
+                 <a class="nav-link dropdown-toggle hover:text-[#E9AC32]" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                 {{ Auth::user()->name }}
+             </a>
+             <ul class="dropdown-menu font-sans ">
+                 <li>
+                     <div class="mx-3 text-lime-700">{{ Auth::user()->email }}</div>
+                 </li>
+                 
+                 <li>
+                 <a class="dropdown-item font-medium" href="{{ route('profile.edit') }}">
+                         {{ __('Profile') }}
+                 </a></li>
                 
-                <li>
-                <a class="dropdown-item font-medium" href="{{ route('profile.edit') }}">
-                        {{ __('Profile') }}
-                </a></li>
-
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li>
+                 </li>
+                 <li>
+                     <hr class="dropdown-divider">
+                 </li>
+                 <li>
                     <div class="dropdown-item ">
                         <form method="POST" action="{{ route('logout') }}" class="">
                             @csrf
@@ -60,7 +60,7 @@
 </section>
 
 {{-- mobile sidebar --}}
-<section class="block lg:hidden z-[99]">
+<section class="block md:hidden z-[99]">
 
     <nav class="navbar bg-body-tertiary fixed-top navlinks shadow-md ">
         <div class="container-fluid">

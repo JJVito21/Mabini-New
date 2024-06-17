@@ -9,18 +9,18 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/cscsss/dataTables.bootstrap5.min.">
 
 
-<div class="mb-40 lg:mb-56">
+<div class="mb-40 lg:mb-56 overflow-x-hidden">
 
   
 
  
-    <section>
-        <div class="flex items-center justify-center mt-20">
-        
-            <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
-                <span class="underlined underline-mask">Homepage Management</span>
-            </h2>
-        </div>
+  <section>
+      <div class="flex items-center justify-center mt-20">
+      
+          <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
+              <span class="underlined underline-mask">Homepage Management</span>
+          </h2>
+      </div>
         
         <div class="mt-40">
           {{-- <p class="font-bold text-lg md:text-xl mx-10 mb-10 md:mb-20">The <span class="uppercase text-lime-700 ">homepage carousel slider</span> changes appear here.</p> --}}
@@ -40,25 +40,25 @@
                       class="{{ $index == 0? 'active' : '' }} carouselButton" aria-label="Slide {{ $index + 1 }}"></button>
               @endforeach
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner overflow-hidden">
 
                 @foreach ($imageData as $index => $item)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" >
                         <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
                     </div>
                 @endforeach
-             {{-- <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/brigada.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
-                </div>
-            </div> --}}
-            </div>
+              </div>
+              {{-- <div class="carousel-inner">
+                 <div class="carousel-item active">
+                     <img src="images/building.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+                 <div class="carousel-item">
+                     <img src="images/brigada.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+                 <div class="carousel-item">
+                     <img src="images/maggi.jpg" class="d-block w-100 md:h-[35rem]" alt="...">
+                 </div>
+             </div> --}}
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomepage"
                 data-bs-slide="prev" >
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

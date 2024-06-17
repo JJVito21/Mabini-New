@@ -18,7 +18,7 @@
                 <a class=" hover:text-[#E9AC32] transition duration-300" href="/procurement">Procurement</a>
                 {{-- <a class=" hover:text-[#E9AC32] transition duration-300" href="about">About Us</a> --}}
                 <span class="dropdown">
-                    <a class="hover:text-[#E9AC32] transition duration-300 flex items-center" href="#" role="button" aria-expanded="false">
+                    <a class="hover:text-[#E9AC32] transition duration-300 flex items-center" role="button" aria-expanded="false">
                         About Us 
                         <span class="ml-1 w-2 [&>svg]:h-5 [&>svg]:w-5 flex-shrink-0 mt-1">
                             <svg

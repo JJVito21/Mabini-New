@@ -26,7 +26,7 @@
 
                 @foreach ($imageData as $index => $item)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" >
-                        <img src="{{ asset($item->image) }}" class="d-block w-100 h-[15rem] md:h-[35rem]" alt="...">
+                        <img src="{{ asset($item->image) }}" class="d-block w-100 h-[12rem] md:h-[35rem]" alt="...">
                     </div>
                 @endforeach
 
@@ -156,30 +156,29 @@
     </section>
     <section>
 
+    <div class="flex flex-col md:flex-row items-center justify-center text-pretty my-20 w-full text-neutral-100">
+        <div class="flex flex-col md:h-[40rem] w-screen bg-[#044D0B]">
+            <h2 class="uppercase text-center lg:text-start text-[40px] md:text-[4rem] lg:text-[5rem] md:leading-[70px] font-black mt-20">
+                why should you choose <span class=" border-neutral-100 border-b-2">mabini</span>
+            </h2>
 
-            <div class="flex flex-col md:flex-row items-center justify-center text-pretty my-20 w-full text-neutral-100">
-                <div class="flex flex-col h-[40rem] w-screen bg-[#044D0B]">
-                    <h2 class="uppercase text-center lg:text-start text-[40px] md:text-[4rem] lg:text-[5rem] md:leading-[70px] font-black mt-20">
-                        why should you choose <span class=" border-neutral-100 border-b-2">mabini</span>
-                    </h2>
+            <div class="p-20 max-w-[100rem] mx-auto">
+                <span class="text-4xl "><i class="fa-solid fa-quote-left"></i></span> 
+                <p class="text-pretty leading-8">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+                <span class="text-4xl "><i class="fa-solid fa-quote-right"></i></span> 
 
-                    <div class="p-20 max-w-[100rem] mx-auto">
-                        <span class="text-4xl "><i class="fa-solid fa-quote-left"></i></span> 
-                        <p class="text-pretty leading-8">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        </p>
-                        <span class="text-4xl "><i class="fa-solid fa-quote-right"></i></span> 
-
-                        <p class="italic mt-10">-Jian Vito, The Principal</p>
-                    </div>
-                </div>
-            
-                <div class="flex flex-col h-0 md:h-[40rem] w-0 md:w-[40rem]">
-                    <img src="images/principal.jpg" alt="" class="h-full">
-                </div>
+                <p class="italic mt-10">-Jian Vito, The Principal</p>
             </div>
+        </div>
+            
+        <div class="hidden md:flex md:flex-col md:h-[40rem] md:w-[40rem]">
+            <img src="images/principal.jpg" alt="" class="h-full">
+        </div>
+    </div>
 
             <div class="flex flex-col justify-center items-center mt-40">
 

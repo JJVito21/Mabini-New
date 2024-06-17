@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\FallbackController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProcurementController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,9 +43,14 @@ Route::middleware('auth')->group(function () {
     // Route::put('/update_image/{id}', [CarouselController::class, 'updateImage'])->name('update_image');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('programs_management', [MainController::class, 'programs_management'])->name('programs_management');
 
+Route::middleware('auth')->group(function () {
+    Route::get('faculty_management', [FacultyController::class, 'faculty_management'])->name('faculty_management');
+});
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('programs_management', [ProgramsController::class, 'programs_management'])->name('programs_management');
 });
 
 Route::middleware('auth')->group(function () {

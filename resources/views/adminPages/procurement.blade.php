@@ -45,10 +45,10 @@
 
               <td>
                 {{-- {{ url('/download', $item->file) }} --}}
-                <button type="button" data-bs-toggle="modal" data-bs-target="#editItemModal" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
-                <div class="flex flex-col py-1">
-                    <i class="fa-solid fa-pen"></i>
-                </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#editItemModal" data-item-id="{{ $item->id }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
+                    <div class="flex flex-col py-1">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
                 </button>
                 <a href="{{ route('delete_procurement', $item->id) }}" 
                 class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')"><i class="fa-solid fa-trash-can "></i></a>
@@ -96,7 +96,7 @@
       </div>
 
 {{-- edit procurement item modal --}}
-<div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -129,7 +129,39 @@
             </div>
         </div>
     </div>
-  </div>
+  </div> --}}
+  
+  <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ms-auto font-medium text-lime-800" id="exampleModalLabel">Edit Procurement Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="GET" action="" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="mb-3">
+                      <label for="itemName" class="form-label font-sans font-medium capitalize">Item Name</label>
+                      <input type="text" class="form-control border-0 bg-gray-300 rounded" name="itemName" id="itemName" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="supplier" class="form-label font-sans font-medium capitalize">Supplier</label>
+                      <input type="text" class="form-control border-0 bg-gray-300 rounded" name="supplier" id="supplier" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="link" class="form-label font-sans font-medium capitalize">Link</label>
+                      <input type="url" class="form-control border-0 bg-gray-300 rounded" name="link" id="link" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 
 
@@ -174,6 +206,17 @@
             rowReorder: true
         });
     });
+    $('#procurementTable').on('click', 'button[data-bs-toggle="modal"][data-bs-target="#editItemModal"]', function() {
+    var itemId = $(this).data('item-id');
+    var itemName = $(this).closest('tr').find('td:eq(0)').text();
+    var supplier = $(this).closest('tr').find('td:eq(2)').text();
+    //retrieves the data from the link using href attribute of anchor tag
+    var link = $(this).closest('tr').find('td:eq(3) a').attr('href');
+
+    $('#editItemModal').find('input[name="itemName"]').val(itemName);
+    $('#editItemModal').find('input[name="supplier"]').val(supplier);
+    $('#editItemModal').find('input[name="link"]').val(link); 
+});
 </script>
     
 @include('footer.footer')
