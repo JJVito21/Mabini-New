@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('faculty', function (Blueprint $table) {
             $table->id();
+            $table->string('profileImage', 300 );
+            $table->string('name');
+            $table->string('role');
             $table->timestamps();
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

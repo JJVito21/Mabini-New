@@ -96,40 +96,6 @@
       </div>
 
 {{-- edit procurement item modal --}}
-{{-- <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title ms-auto font-medium text-lime-800" id="exampleModalLabel">Edit Procurement Item</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                @foreach ($procurementItem as $item)
-  
-                <form method="GET" action="{{ route('updateItem', ['procurementItem' => $item->id]) }}"  enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="mb-3">
-                      <label for="itemName" class="form-label font-sans font-medium capitalize">Item Name</label>
-                      <input type="text" class="form-control border-0 bg-gray-300 rounded" name="itemName" id="itemName" value="{{ $item->itemName }}" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="supplier" class="form-label font-sans font-medium capitalize">Supplier</label>
-                      <input type="text" class="form-control border-0 bg-gray-300 rounded" name="supplier" id="supplier" value="{{ $item->supplier }}" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="link" class="form-label font-sans font-medium capitalize">Link</label>
-                      <input type="url" class="form-control border-0 bg-gray-300 rounded" name="link" id="link" value="{{ $item->link }}" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save</button>
-                    </div>
-                </form>
-                @endforeach
-            </div>
-        </div>
-    </div>
-  </div> --}}
   
   <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -192,7 +158,7 @@
           }
   
           // Close the success message after 3000 milliseconds even if the modal is not closed
-          setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
+          setTimeout(closeSuccessMessage, 3000); 
       </script>
   @endif
 

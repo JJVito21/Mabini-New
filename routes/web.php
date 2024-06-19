@@ -25,9 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 
 // Admin Routes
-// Route::get('/homepage_management', function () {
-//     return view('adminPages.homepage');
-// })->middleware(['auth', 'verified'])->name('/homepage_management');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,8 +41,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
 Route::middleware('auth')->group(function () {
     Route::get('faculty_management', [FacultyController::class, 'faculty_management'])->name('faculty_management');
+    Route::post('/addStaff', [FacultyController::class, 'addStaff'])->name('addStaff');
+    Route::get('/delete_Staff{facultyData}', [FacultyController::class, 'delete'])->name('delete_Staff');
+
 });
 
 
@@ -72,6 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/download/{file}', [MemoController::class, 'download']);
     Route::get('/delete_memo{id}', [MemoController::class, 'delete'])->name('delete_memo');
 });
+
 // User Routes
 Route::get('/', [UserController::class, 'homepage']) ;
 Route::get('memo', [UserController::class, 'memo']);

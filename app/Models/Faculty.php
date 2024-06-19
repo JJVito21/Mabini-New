@@ -12,9 +12,8 @@ class Faculty extends Model
     protected $table = 'faculty';
     
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'role',
-        'userIP'
+        'profileImage',
+        'name',
+        'role'
     ];
 }

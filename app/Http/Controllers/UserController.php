@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Memo;
-use App\Models\ContactMessages;
 use App\Models\Carousel;
+use App\Models\ContactMessages;
+use App\Models\Faculty;
 use App\Models\Procurement;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,7 @@ class UserController extends Controller
         $imageData = Carousel::all();
         return view('userPages.homepage' , ['imageData' => $imageData]);
     }
-    // public function homepage_management()
-    // {
-    //     return view('adminPages.homepage', ['imageData' => $imageData]);
-    // }
+
     // method to show uploaded memorandums
     public function memo()
     {
@@ -37,7 +35,8 @@ class UserController extends Controller
     }
     public function faculty()
     {
-        return view('userPages.faculty');
+        $facultyData = Faculty::all();
+        return view('userPages.faculty', ['facultyData' => $facultyData]);
     }
     public function contact()
     {
