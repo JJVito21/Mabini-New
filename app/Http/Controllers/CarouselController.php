@@ -13,7 +13,7 @@ class CarouselController extends Controller
     $imageName = '';
 
     if ($request->hasFile('image')) {
-        $imageName = $request->getSchemeAndHttpHost(). '/assets/img/'. time(). '.'. $request->image->extension();
+        $imageName =  '/assets/img/'. time(). '.'. $request->image->extension();
 
         if ($request->image->move(public_path('/assets/img/'), $imageName)) {
             $imageData = [

@@ -25,7 +25,6 @@
                 <div class="relative">
                   <img src="/images/jian.jpg" class="card-img-top w-40 h-40" alt="A picture of a person">
                 </div>
-
                 <div class="card-body">
                   <h5 class="card-title font-bold text-[#044D0B]">John Doe</h5>
                   <p class="card-text">Principal</p>
@@ -39,7 +38,7 @@
       <div class="flex flex-col items-center justify-center gap-10">
            <h1 class="capitalize font-bold  font-koho
            text-2xl md:text-3xl text-[#044D0B] py-2 px-4 text-center">teaching staff</h1> 
-       <div class="flex flex-row gap-10">
+        <div class="grid grid-cols-2 md:flex md:flex-row gap-4 md:gap-10">
         @foreach ($facultyData as $data)
 
          <div class="card" style="width: 10rem;">
@@ -53,8 +52,8 @@
              </div>
            </div>
            @endforeach
-
        </div>
+       
       </div>
 
   </section>

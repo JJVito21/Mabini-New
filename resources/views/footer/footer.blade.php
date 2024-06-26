@@ -1,6 +1,6 @@
 <!-- component -->
 
-  <footer class="w-full text-gray-700 bg-[#044D0B] body-font">
+  <footer class="w-full text-gray-700 bg-[#044D0B] body-font bottom-0">
       <div
           class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
           <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
@@ -53,7 +53,7 @@
                           <a href="/about" class="text-neutral-300 cursor-pointer hover:text-gray-900">History, Mission, Vision</a>
                       </li>
                       <li class="mt-3">
-                          <a href="https://facebook.com/mabininhscadiz" class="text-neutral-300 cursor-pointer hover:text-gray-900">Facebook Page</a>
+                          <a href="https://facebook.com/mabininhscadiz" class="text-neutral-300 cursor-pointer hover:text-gray-900">Social Media</a>
                       </li>
                   </nav>
               </div>

@@ -17,7 +17,7 @@
      
     </div>
  </section>
-
+    {{-- precoded principal card data --}}
     <section class="mb-14">
          <div class="flex flex-col items-center justify-center gap-10">
               <h1 class="capitalize font-bold  font-koho
@@ -27,16 +27,6 @@
                 <div class="relative">
                   <img src="/images/jian.jpg" class="card-img-top w-40 h-40" alt="A picture of a person">
                 </div>
-                <div class="absolute top-0 right-0">
-                  <div class="dropdown m-1">
-                    <button class="bg-neutral-100 transition duration-300 hover:bg-neutral-400 px-1 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis text-gray-800"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end min-w-20">
-                      <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="#">Edit</a></li>
-                    </ul>
-                  </div>
-                </div>
                 <div class="card-body">
                   <h5 class="card-title font-bold text-[#044D0B]">John Doe</h5>
                   <p class="card-text">Principal</p>
@@ -45,15 +35,17 @@
           </div>
          </div>
      </section>
-         
+      {{-- dynamically display data of teaching staff --}}
      <section class="mb-14">
       <div class="flex flex-col items-center justify-center gap-10">
-           <h1 class="capitalize font-bold  font-koho
+           <h1 class="capitalize font-bold font-koho
            text-2xl md:text-3xl text-[#044D0B] py-2 px-4 text-center">teaching staff</h1> 
-       <div class="flex flex-row gap-10">
+        {{-- <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10"> --}}
+        <div class="grid grid-cols-2 md:flex md:flex-row gap-4 md:gap-10">
+
         @foreach ($facultyData as $data)
 
-         <div class="card" style="width: 10rem;">
+         <div class="card " style="width: 10rem;">
              <div class="relative">
                <img src="{{ asset($data->profileImage) }}" class="card-img-top w-40 h-40" alt="A picture of a person">
              </div>
@@ -63,7 +55,7 @@
                    <i class="fa-solid fa-ellipsis text-gray-800"></i>
                  </button>
                  <ul class="dropdown-menu dropdown-menu-end min-w-20">
-                   <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="#">Edit</a></li>
+                   <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="{{ route('editStaff',  $data->id) }}">Edit</a></li>
                    <li><a class="dropdown-item font-medium text-red-600 hover:text-white hover:bg-red-600" href="{{ route('delete_Staff', $data->id) }}" onclick="return confirm('Are you sure you want to delete this Staff?')">Delete</a></li>
                  </ul>
                </div>
@@ -72,14 +64,16 @@
                <h5 class="card-title font-bold text-[#044D0B]">{{ $data -> name }}</h5>
                <p class="card-text">{{ $data -> role }}</p>
              </div>
-           </div>
-           @endforeach
-           <div class="card bg-neutral-300" style="width: 10rem;">
+            </div>
+            @endforeach
+            {{-- add faculty button --}}
+            <div class="card bg-neutral-300 h-[250px] w-[10rem]">
             <div class="m-auto">
               <button data-bs-target="#addNewStaff" type="button" class="btn bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100" data-bs-toggle="modal" data-bs-target="#uploadItemModal"><i class="fa-solid fa-plus"></i>
               </button>
             </div>
           </div>
+          
        </div>
       </div>
 
@@ -95,8 +89,8 @@
                   <form action="{{ route('addStaff') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 flex flex-col justify-center items-center">          
-                      <img id="showPhoto" class="rounded-lg w-40 " src="{{ asset('images/profile-placeholder.png') }}" alt="photo"/>
-                      <input type="file" name="photo" id="photo" class="" onchange="previewImage(this);">
+                      <img id="showPhoto" class="rounded-lg w-40 mb-5 " src="{{ asset('images/profile-placeholder.png') }}" alt="photo"  />
+                      <input type="file" name="photo" id="photo" class="" onchange="previewImage(this);" accept=".jpg, .png, .jpeg"  >
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label font-sans font-medium capitalize">Name</label>
@@ -125,6 +119,7 @@
         opacity: 1;
         transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
     }
+
 </style>
 
 <div id="success-message" class="alert bg-[#6e914b] text-neutral-200 position-fixed bottom-0 mt-5 ms-4">

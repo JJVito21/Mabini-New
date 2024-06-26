@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('faculty_management', [FacultyController::class, 'faculty_management'])->name('faculty_management');
     Route::post('/addStaff', [FacultyController::class, 'addStaff'])->name('addStaff');
+    Route::get('/editStaff{facultyData}', [FacultyController::class, 'editStaff'])->name('editStaff');
+    Route::put('/update_Staff{id}', [FacultyController::class, 'update'])->name('update_Staff');
     Route::get('/delete_Staff{facultyData}', [FacultyController::class, 'delete'])->name('delete_Staff');
 
 });
