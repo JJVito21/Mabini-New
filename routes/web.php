@@ -37,7 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::get('homepage_management', [CarouselController::class, 'homepage_management'])->name('homepage_management');
     Route::post('/uploadImage', [CarouselController::class, 'uploadImage'])->name('uploadImage');
     Route::get('/delete_image{id}', [CarouselController::class, 'delete'])->name('delete_image');
-    // Route::put('/update_image/{id}', [CarouselController::class, 'updateImage'])->name('update_image');
 });
 
 
