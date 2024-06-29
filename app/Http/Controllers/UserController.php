@@ -35,7 +35,7 @@ class UserController extends Controller
     }
     public function faculty()
     {
-        $facultyData = Faculty::all();
+        $facultyData = Faculty::orderBy('role', 'asc')->get();
         return view('userPages.faculty', ['facultyData' => $facultyData]);
     }
     public function contact()

@@ -38,10 +38,13 @@
       <div class="flex flex-col items-center justify-center gap-10">
            <h1 class="capitalize font-bold  font-koho
            text-2xl md:text-3xl text-[#044D0B] py-2 px-4 text-center">teaching staff</h1> 
-        <div class="grid grid-cols-2 md:flex md:flex-row gap-4 md:gap-10">
+
+           {{-- gap-4 for small screen, m-5 for increased gap 
+           between cards for medium screens and up --}}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         @foreach ($facultyData as $data)
 
-         <div class="card" style="width: 10rem;">
+         <div class="card md:m-5" style="width: 10rem;">
              <div class="relative">
                <img src="{{ asset($data->profileImage) }}" class="card-img-top w-40 h-40" alt="A picture of a person">
              </div>

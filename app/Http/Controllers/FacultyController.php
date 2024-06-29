@@ -13,7 +13,7 @@ class FacultyController extends Controller
     // Method to display the faculty management page
     public function faculty_management()
     {
-        $facultyData = Faculty::all();
+        $facultyData = Faculty::orderBy('role', 'asc')->get();
         return view('adminPages.faculty', ['facultyData' => $facultyData]);
     }
 
