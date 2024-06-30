@@ -37,7 +37,7 @@
             <tr>
               <td><i class="fa-solid fa-file-pdf"> </i>{{ $item->file }}</td>
               <td>{{ $item->created_at->format('Y-m-d') }}</td>
-              <td class="flex flex-row">
+              <td>
                 <a href="{{ url('/download', $item->file) }}" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100 me-3 ">
                 <div class="flex flex-col py-1">
                     <i class="fa-solid fa-arrow-down"></i>
