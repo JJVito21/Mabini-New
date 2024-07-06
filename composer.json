@@ -10,7 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "spatie/laravel-google-calendar": "^3.8"
+        "latfur/laravel-event-crud": "^1.0",
+        "tormjens/eventy": "^0.9.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
