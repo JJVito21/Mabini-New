@@ -77,10 +77,20 @@
                     success:function(response)
                     {
                         // location reload signfies update
-                        // whereas, modal hide only hides modal, and input field is not cleared
-                        
-                        // $('#eventModal').modal('hide')
-                        location.reload();
+                        // whereas, modal('hide') only hides modal, and input field is not cleared
+                        Swal.fire({
+                          position: "top-end",
+                          icon: "success",
+                          title: "Event added successfully",
+                          showConfirmButton: false,
+                          timer: 1500
+                        });
+                        $('#eventModal').modal('hide');
+                        clearForm();
+                        function clearForm() {
+                        $('#title').val('');
+                        $('#titleError').html('');
+                    }
                         $('#calendar').fullCalendar('renderEvent', {
                             'title' : response.title,
                             'start' : response.start_date,
@@ -96,10 +106,43 @@
                     }      
                     })
                 })
+            },
+            editable: true,
+            eventDrop: function(event){
+              var id = event.id;
+              var start_date = moment(event.start).format('YYYY-MM-DD');
+              var end_date = moment(event.end).format('YYYY-MM-DD');
+
+              $.ajax({
+                    url:"{{route('update_event', '') }}" + '/' + id,
+                    type:"PATCH",
+                    dataType: 'json',
+                    data:{ start_date, end_date },
+                    success:function(response)
+                    {
+                      Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Event updated succesfully",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    } ,  
+                    
+                    error:function(error)
+                    {
+                        console.log(error)
+                    }      
+                    })
             }
+
+
         })
     });
 </script>
+
+
+
 <style>
     .fc-center h2 {
         font-size: 2rem; 

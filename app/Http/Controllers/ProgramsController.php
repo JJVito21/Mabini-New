@@ -14,6 +14,7 @@ class ProgramsController extends Controller
         $events = Event::all();
         foreach($events as $event){
             $eventList[] = [
+            'id' => $event->id,
             'title' => $event->title,
             'start' => $event->start_date,
             'end' => $event->end_date,
@@ -38,6 +39,19 @@ class ProgramsController extends Controller
         ]);
         return response()->json($eventCreate);
         // return redirect()->back()->with('success', 'File uploaded successfully');
+    }
+    public function update(Request $request, $id){
+       $event = Event::find($id);
+       if(! $event){
+        return response()->json([
+            'error' => 'Unable to locate the event'
+        ], 404);
+       }
+       $event->update([
+        'start_date' => $request->start_date,
+        'end_date' => $request->end_date,
+       ]);
+       return response()->json('Event updated');
     }
 
 }

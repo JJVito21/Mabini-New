@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     @vite('resources/css/app.css')
     <link rel="icon" type="image/x-icon" href="/images/logo2.png" name="mabini farm school icon">
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- calendar js links --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
