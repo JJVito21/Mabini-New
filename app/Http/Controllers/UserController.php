@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Memo;
+use App\Models\Event;
 use App\Models\Carousel;
 use App\Models\ContactMessages;
 use App\Models\Faculty;
@@ -26,7 +27,18 @@ class UserController extends Controller
 
     public function programs()
     {
-        return view('userPages.programs');
+                // Fetch all events from the database
+                $eventList = array();
+                $events = Event::all();
+                foreach($events as $event){
+                    $eventList[] = [
+                    'id' => $event->id,
+                    'title' => $event->title,
+                    'start' => $event->start_date,
+                    'end' => $event->end_date,
+                ];
+                }
+                return view('userPages.programs', ['eventList' => $eventList]);
     }
 
     public function about()

@@ -7,7 +7,7 @@
 <div class="mb-40 lg:mb-56">
     
 <section>
-    <div class="text-center mt-40 mb-32">
+    <div class="text-center mt-20 mb-32">
 
         <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
             <span class="underlined underline-mask">programs</span>
@@ -25,12 +25,12 @@
         </div>
         <div class="modal-body">
             <label for="title" class="form-label">Event Title</label>
-          <input type="text" class="form-control rounded" name="title" id="title" required>
+          <input type="text" class="form-control rounded" name="title" id="title" required >
           <span id="titleError" class="text-red-600 "></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save" class="btn btn-primary">Save changes</button>
+          <button type="submit" id="save" class="btn  bg-lime-600 hover:bg-lime-700 text-neutral-100 hover:text-neutral-100">Save changes</button>
         </div>
       </div>
     </div>
@@ -42,8 +42,10 @@
 </div>
 
 <script>
-        $(document).ready(function() {
 
+
+
+        $(document).ready(function() {
         $.ajaxSetup({
         headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -63,7 +65,13 @@
             selectHelper: true,
             select: function(start, end, allDays){
                 $('#eventModal').modal('toggle');
-
+                $('#eventModal').on('shown.bs.modal', function () {
+                    $('#title').focus().select();
+                });
+                $('#eventModal').on('hidden.bs.modal', function () {
+                  $('#title').val('');
+                  $('#titleError').html('');
+                })
                 $('#save').click(function() {
                     var title = $('#title').val();
                     var start_date = moment(start).format('YYYY-MM-DD');
@@ -132,24 +140,73 @@
                     error:function(error)
                     {
                         console.log(error)
-                    }      
-                    })
+                    },      
+                    });
+            },
+            eventClick: function(event){
+              var id = event.id;
+
+              if(confirm('Are you sure you want to delete this event?'))
+            {
+              $.ajax({
+                    url:"{{route('delete_event', '') }}" + '/' + id,
+                    type:"DELETE",
+                    dataType: 'json',
+                    success:function(response)
+                    {
+
+                      $('#calendar').fullCalendar('removeEvents', response)
+                      Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Event deleted succesfully",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    } ,  
+                    
+                    error:function(error)
+                    {
+                        console.log(error)
+                    },      
+                    });
             }
-
-
+            },
+            //disables multi-select of event date
+            selectAllow: function(event)
+                {
+                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
+                }
+        });
+        $('#eventModal').on('hidden.bs.modal', function () {
+          $('#save').unbind();
         })
+
+
     });
 </script>
 
 
 
 <style>
-    .fc-center h2 {
-        font-size: 2rem; 
-        color: #2c812f; 
-        font-family: Arial, sans-serif; 
-        font-weight: bold; 
-    }
+  .fc{
+    padding: 20px;
+    border-top: 2px solid #E9AC32;
+  }
+  .fc-today{
+    background-color: #f7de97 !important;
+  }
+  .fc-event{
+    font-size: 16px;
+    /* background-color: #84b056; */
+    /* border: #84b056; */
+  }
+  .fc-center h2 {
+      font-size: 2rem; 
+      color: #2c812f; 
+      font-family: Arial, sans-serif; 
+      font-weight: bold; 
+  }
 </style>
 @include('footer.footer')
 @endsection

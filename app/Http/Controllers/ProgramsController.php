@@ -54,4 +54,16 @@ class ProgramsController extends Controller
        return response()->json('Event updated');
     }
 
+    public function delete($id)
+    {
+        $event = Event::find($id);
+        if(! $event){
+            return response()->json([
+                'error' => 'Unable to locate the event'
+            ], 404);
+           }
+           $event->delete();
+           return $id;
+    }
+
 }
