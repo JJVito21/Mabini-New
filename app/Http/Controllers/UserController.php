@@ -22,23 +22,13 @@ class UserController extends Controller
     public function memo()
     {
         $data = Memo::all()->reverse();
-        return view('UserPages.memo', ['data' => $data]);
+        return view('userPages.memo', ['data' => $data]);
     }
 
     public function programs()
     {
-                // Fetch all events from the database
-                $eventList = array();
-                $events = Event::all();
-                foreach($events as $event){
-                    $eventList[] = [
-                    'id' => $event->id,
-                    'title' => $event->title,
-                    'start' => $event->start_date,
-                    'end' => $event->end_date,
-                ];
-                }
-                return view('userPages.programs', ['eventList' => $eventList]);
+        $eventData = Event::orderBy('eventDate', 'desc')->get();
+        return view('userPages.programs' , ['eventData' => $eventData]);
     }
 
     public function about()
@@ -79,7 +69,7 @@ class UserController extends Controller
     public function procurement()
     {
         $procurementItem = Procurement::all()->reverse();
-        return view('UserPages.procurement', ['procurementItem' => $procurementItem]);
+        return view('userPages.procurement', ['procurementItem' => $procurementItem]);
     }
 
     //footer links to be added

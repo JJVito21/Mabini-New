@@ -4,22 +4,29 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->string('eventImage', 300 );
+            $table->string('eventName');
+            $table->string('eventDate');
             $table->timestamps();
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
         Schema::dropIfExists('events');
     }
-
 };
+
+

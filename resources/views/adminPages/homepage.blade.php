@@ -18,7 +18,7 @@
       <div class="flex items-center justify-center mt-20">
       
           <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
-              <span class="underlined underline-mask">Homepage Management</span>
+              <span class="underlined underline-mask">Homepage</span>
           </h2>
       </div>
         

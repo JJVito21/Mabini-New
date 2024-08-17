@@ -73,16 +73,13 @@
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="memo">Memo</a></li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="programs">Programs</a></li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="procurement">Procurement</a></li>
-        {{-- <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="about"></a></li> --}}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle hover:text-[#E9AC32] transition duration-300 text-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About Us
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="dropdown-menu gap-4">
+              <li><a class="dropdown-item text-sm" href="/faculty">Faculty</a></li>
+              <li><a class="dropdown-item text-sm" href="/about">History, Mission, Vision</a></li>
             </ul>
           </li>
         <li class="nav-item"><a class="nav-link hover:text-[#E9AC32] transition duration-300 text-sm" href="contact">Contact Us</a></li>

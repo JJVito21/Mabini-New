@@ -3,67 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Event;
 
 class ProgramsController extends Controller
 {
     public function programs_management()
     {
-        // Fetch all events from the database
-        $eventList = array();
-        $events = Event::all();
-        foreach($events as $event){
-            $eventList[] = [
-            'id' => $event->id,
-            'title' => $event->title,
-            'start' => $event->start_date,
-            'end' => $event->end_date,
-        ];
-        }
-        return view('adminPages.programs', ['eventList' => $eventList]);
+        $eventData = Event::orderBy('eventDate', 'desc')->get();
+        return view('adminPages.programs' , ['eventData' => $eventData]);
     }
 
 
 
     public function create_event(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string'
-        ]);
-
-        $eventCreate = Event::create([
-            'title' => $request->title,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
-
-        ]);
-        return response()->json($eventCreate);
-        // return redirect()->back()->with('success', 'File uploaded successfully');
-    }
-    public function update(Request $request, $id){
-       $event = Event::find($id);
-       if(! $event){
-        return response()->json([
-            'error' => 'Unable to locate the event'
-        ], 404);
-       }
-       $event->update([
-        'start_date' => $request->start_date,
-        'end_date' => $request->end_date,
-       ]);
-       return response()->json('Event updated');
-    }
-
-    public function delete($id)
-    {
-        $event = Event::find($id);
-        if(! $event){
-            return response()->json([
-                'error' => 'Unable to locate the event'
-            ], 404);
-           }
-           $event->delete();
-           return $id;
-    }
-
+        $eventImage = '';
+                if ($request->hasFile('photo')) {
+                    // Generate a unique filename
+                    $eventImage = '/assets/img/' . time() . '.' . $request->photo->extension();
+                    // Move the uploaded file to the public directory
+                    $request->photo->move(public_path('/assets/img/'), basename($eventImage));
+                }
+                // Validate the request data
+                $request->validate([
+                    'eventName' => 'required',
+                    'eventDate' => 'required',
+                ]);
+            
+                $eventData = [
+                    'eventImage' => $eventImage,
+                    'eventName' => $request->eventName,
+                    'eventDate' => $request->eventDate,
+                ];
+            
+                $newEvent = Event::create($eventData);
+            
+                return redirect()->route('programs_management')->with('success', 'Event added successfully');
+}
 }

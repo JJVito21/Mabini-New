@@ -3,9 +3,6 @@
 @section('content')
 @include('navbars.admin-navbar')
 
-@import '~@fullcalendar/core/main.css';
-@import '~@fullcalendar/daygrid/main.css';
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div class="-mt-3 md:-mt-1 mb-40 overflow-x-hidden">
@@ -147,41 +144,8 @@
     // Close the success message after 3000 milliseconds even if the modal is not closed
     setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
 
-
-    // resources/js/calendar.js
-
-import { Calendar } from '@fullcalendar/core'
-import interactionPlugin from '@fullcalendar/interaction'
-import dayGridPlugin from '@fullcalendar/daygrid'
-
-document.addEventListener('DOMContentLoaded', function() {
-  const calendarEl = document.getElementById('calendar')
-  if (calendarEl) {
-    const calendar = new Calendar(calendarEl, {
-      plugins: [
-        interactionPlugin,
-        dayGridPlugin
-      ],
-      initialView: 'timeGridWeek',
-      editable: true,
-      events: [
-        { title: 'Meeting', start: new Date() }
-      ]
-    })
-
-    calendar.render()
-  }
-})
-
 </script>
 @endif   
-<style>
-  #faculty-banner {
-      background:
-          #044D0B url("images/faculty.jpg") no-repeat center / cover;
-  }
-
-</style>
 <script>
   // JavaScript function to preview the selected image
   function previewImage(input) {
@@ -195,5 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 </script>
+
+<style>
+  #faculty-banner {
+      background:
+          #044D0B url("images/faculty.jpg") no-repeat center / cover;
+  }
+
+</style>
 @include('footer.footer')
 @endsection
