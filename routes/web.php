@@ -53,7 +53,8 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('programs_management', [ProgramsController::class, 'programs_management'])->name('programs_management');
-    Route::post('create_event', [ProgramsController::class, 'create_event'])->name('create_event');
+    Route::post('/create_event', [ProgramsController::class, 'create_event'])->name('create_event');
+    Route::get('/delete_event{eventData}', [ProgramsController::class, 'delete_event'])->name('delete_event');
 });
 
 Route::middleware('auth')->group(function () {

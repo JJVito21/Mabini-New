@@ -40,5 +40,28 @@ class ProgramsController extends Controller
                 $newEvent = Event::create($eventData);
             
                 return redirect()->route('programs_management')->with('success', 'Event added successfully');
-}
+    }
+
+    public function delete_event($id)
+    {
+        $eventData = Event::find($id);
+    
+        if ($eventData) {
+            // Extract the filename from the full URL
+            $file = basename($eventData->eventImage);
+    
+            // Delete file from storage
+            $filePath = public_path('/assets/img/' . $file);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+    
+            // Delete faculty data from the database
+            $eventData->delete();
+    
+            return redirect()->route('programs_management')->with('success', 'Event deleted successfully');
+        }
+    
+        return redirect()->route('programs_management')->with('error', 'Event not found!');
+    }
 }

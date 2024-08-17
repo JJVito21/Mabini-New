@@ -86,8 +86,22 @@ data-bs-toggle="modal" data-bs-target="#addEvent">
 <div class="flex flex-col mx-auto overflow-scroll overflow-x-hidden max-h-[24.5rem] w-72 md:w-96">
   @foreach ($eventData as $data)
   <div class="mb-5 me-2">
-    <h1 class="font-medium text-lg ">{{ $data -> eventName }}</h1>
-    <h2 class="font-sm text-base">{{ \Carbon\Carbon::parse($data->eventDate)->format('F d, Y') }}</h2>
+
+    <div class="dropdown m-1">
+      <button  class="z-10 absolute top-0 right-0 bg-neutral-100 transition duration-300 hover:bg-neutral-400 px-1 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-ellipsis text-gray-800"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end min-w-20">
+        <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="{{ route('editStaff',  $data->id) }}">Edit</a></li>
+        <li><a class="dropdown-item font-medium text-red-600 hover:text-white hover:bg-red-600" href="{{ route('delete_event', $data->id) }}" onclick="return confirm('Are you sure you want to delete this Event?')">Delete</a></li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <h1 class="font-medium text-lg ">{{ $data -> eventName }}</h1>
+      <h2 class="font-sm text-base">{{ \Carbon\Carbon::parse($data->eventDate)->format('F d, Y') }}</h2>
+    </div>
+
     <img src="{{ asset($data->eventImage) }}" class="w-auto mt-2"  alt="event poster image">
     </div>
 
