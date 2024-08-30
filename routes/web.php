@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('procurement_management', [ProcurementController::class, 'procurement_management'])->name('procurement_management');
     Route::post('/uploadItem', [ProcurementController::class, 'uploadProcuredItem'])->name('uploadItem');
-    Route::get('/updateItem{procurementItem}/', [ProcurementController::class, 'updateProcuredItem'])->name('updateItem');
+    Route::put('/updateItem{procurementItem}/', [ProcurementController::class, 'updateProcuredItem'])->name('updateItem');
     Route::get('/delete_procurement{procurementItem}', [ProcurementController::class, 'delete'])->name('delete_procurement');
 });
 
@@ -68,7 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::get('message_management', [MessageController::class, 'message_management'])->name('message_management');
     Route::get('/delete_message/{messageItem}', [MessageController::class, 'delete'])->name('delete_message');
     Route::get('/view_message/{messageItem}', [MessageController::class, 'view'])->name('view_message');
-    
+
 });
 Route::middleware('auth')->group(function () {
     Route::get('memo_management', [MemoController::class, 'memo'])->name('memo_management');
