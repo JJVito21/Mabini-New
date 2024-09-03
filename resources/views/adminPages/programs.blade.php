@@ -5,26 +5,26 @@
 
 
 <div class="mb-40 lg:mb-56">
-    
+
 <section>
   <div class="text-center mt-20 mb-32">
       <h2 class="uppercase font-serif text-lg md:text-3xl font-bold text-[#044D0B]">
           <span class="underlined underline-mask">programs</span>
       </h2>
   </div>
-</section>   
- 
-<section class="flex flex-col lg:flex-row items-center md:items-start justify-center gap-10">
+</section>
+
+<section class="flex flex-col lg:flex-row items-center md:items-center justify-center gap-10">
 <div class="flex flex-col items-end gap-2">
 <div class="calendar-container max-h-[30rem]">
   <header class="calendar-header">
       <p class="calendar-current-date"></p>
       <div class="calendar-navigation">
-          <span id="calendar-prev" 
+          <span id="calendar-prev"
                 class="">
                 <i class="fa-solid fa-chevron-left"></i>
           </span>
-          <span id="calendar-next" 
+          <span id="calendar-next"
                 class="">
                 <i class="fa-solid fa-chevron-right"></i>
           </span>
@@ -61,7 +61,7 @@ data-bs-toggle="modal" data-bs-target="#addEvent">
                   @csrf
                   <div class="mb-3">
                     <label for="eventName" class="form-label font-sans font-medium capitalize">Event Name</label>
-                    <input type="text" class="form-control border-0 bg-gray-300 rounded" name="eventName" id="itemName" required>
+                    <input type="text" class="form-control border-0 bg-gray-300 rounded" name="eventName" id="eventName" required>
                   </div>
                   <div class="mb-3">
                     <label for="eventDate" class="form-label font-sans font-medium capitalize">Date</label>
@@ -92,7 +92,7 @@ data-bs-toggle="modal" data-bs-target="#addEvent">
         <i class="fa-solid fa-ellipsis text-gray-800"></i>
       </button>
       <ul class="dropdown-menu dropdown-menu-end min-w-20">
-        <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="{{ route('editStaff',  $data->id) }}">Edit</a></li>
+        <li><a class="dropdown-item font-medium text-lime-600 hover:text-white hover:bg-lime-600" href="{{ route('edit_event',  $data->id) }}">Edit</a></li>
         <li><a class="dropdown-item font-medium text-red-600 hover:text-white hover:bg-red-600" href="{{ route('delete_event', $data->id) }}" onclick="return confirm('Are you sure you want to delete this Event?')">Delete</a></li>
       </ul>
     </div>
@@ -181,11 +181,11 @@ const manipulate = () => {
       lit += `<li class="inactive">${i - dayend + 1}</li>`
   }
 
-  // Update the text of the current date element 
+  // Update the text of the current date element
   // with the formatted current month and year
   currdate.innerText = `${months[month]} ${year}`;
 
-  // update the HTML of the dates element 
+  // update the HTML of the dates element
   // with the generated calendar
   day.innerHTML = lit;
 }
@@ -205,7 +205,7 @@ prenexIcons.forEach(icon => {
       // Check if the month is out of range
       if (month < 0 || month > 11) {
 
-          // Set the date to the first day of the 
+          // Set the date to the first day of the
           // month with the new year
           date = new Date(year, month, new Date().getDate());
 
@@ -222,12 +222,12 @@ prenexIcons.forEach(icon => {
           date = new Date();
       }
 
-      // Call the manipulate function to 
+      // Call the manipulate function to
       // update the calendar display
       manipulate();
   });
 });
-  
+
 
 </script>
 <script>
@@ -251,23 +251,23 @@ prenexIcons.forEach(icon => {
               transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
           }
       </style>
-      
+
       <div id="success-message" class="alert bg-[#6e914b] text-neutral-200 position-fixed bottom-0 mt-5 ms-4">
           {{ session('success') }}
       </div>
-      
+
       <script>
           // Function to close the success message
           function closeSuccessMessage() {
               var successMessage = document.getElementById('success-message');
               successMessage.style.opacity = '0';
-  
+
               // Wait for the transition to complete before hiding or removing the message
               setTimeout(function () {
                   successMessage.style.display = 'none'; // or remove the success message from the DOM
               }, 500); // Duration of the transition, should match the CSS transition duration
           }
-  
+
           // Close the success message after 3000 milliseconds even if the modal is not closed
           setTimeout(closeSuccessMessage, 3000); // 3000 milliseconds = 3 seconds, adjust as needed
       </script>

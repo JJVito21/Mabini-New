@@ -22,34 +22,34 @@ class FacultyController extends Controller
         // Default image path
         $defaultImagePath = '/images/profile-placeholder.png';
         $profileImage = $defaultImagePath;
-    
+
         if ($request->hasFile('photo')) {
             // Generate a unique filename
             $profileImage = '/assets/img/' . time() . '.' . $request->photo->extension();
             // Move the uploaded file to the public directory
             $request->photo->move(public_path('/assets/img/'), basename($profileImage));
         }
-    
+
         // Validate the request data
         $request->validate([
             'name' => 'required',
             'role' => 'required',
         ]);
-    
+
         // Prepare the data for creating a new faculty member
         $facultyData = [
             'profileImage' => $profileImage,
             'name' => $request->name,
             'role' => $request->role,
         ];
-    
+
         // Create a new faculty member using the prepared data
         $newFaculty = Faculty::create($facultyData);
-    
+
         // Redirect to the faculty management page with a success message
         return redirect()->route('faculty_management')->with('success', 'Staff added successfully');
     }
-    
+
     public function editStaff($id)
     {
         $facultyData = Faculty::findOrFail($id);
@@ -93,23 +93,23 @@ class FacultyController extends Controller
     public function delete($id)
     {
         $facultyData = Faculty::find($id);
-    
+
         if ($facultyData) {
             // Extract the filename from the full URL
             $file = basename($facultyData->profileImage);
-    
+
             // Delete file from storage
             $filePath = public_path('/assets/img/' . $file);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
-    
+
             // Delete faculty data from the database
             $facultyData->delete();
-    
+
             return redirect()->route('faculty_management')->with('success', 'Staff deleted successfully');
         }
-    
+
         return redirect()->route('faculty_management')->with('error', 'Staff not found!');
     }
 

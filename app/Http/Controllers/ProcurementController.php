@@ -8,16 +8,16 @@ use App\Models\Procurement;
 class ProcurementController extends Controller
 {
     public function uploadProcuredItem(Request $request){
-        $request->validate([            
-            'itemName' => 'required',          
-            'supplier' =>  'required', 
+        $request->validate([
+            'itemName' => 'required',
+            'supplier' =>  'required',
             'link' =>  'required',
         ]);
 
-        $procurementItem = [   
-            'itemName' => $request -> itemName,          
-            'supplier' =>  $request -> supplier, 
-            'link' =>  $request -> link, 
+        $procurementItem = [
+            'itemName' => $request -> itemName,
+            'supplier' =>  $request -> supplier,
+            'link' =>  $request -> link,
 
         ];
 
@@ -33,15 +33,15 @@ class ProcurementController extends Controller
     }
 
     public function updateProcuredItem(Procurement $procurementItem, Request $request) {
-        $request->validate([            
-            'itemName' => 'required',          
-            'supplier' =>  'required', 
+        $request->validate([
+            'itemName' => 'required',
+            'supplier' =>  'required',
             'link' =>  'required',
         ]);
 
           // Update other form data
           $updatedProcurementItem = [
-            'itemName' => $request->itemName,            
+            'itemName' => $request->itemName,
             'supplier' => $request->supplier,
             'link' => $request->link,
 

@@ -107,6 +107,7 @@
                 </div>
             </div>
 
+
             {{-- edit procurement item modal --}}
 
             <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel"
